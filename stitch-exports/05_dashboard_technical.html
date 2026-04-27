@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETHYX AI | Bias Audit Pro</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=DM+Mono:wght@400;500&amp;family=Space+Grotesk:wght@300;700&amp;family=Manrope:wght@300;500;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#080f17",
+                        "inverse-surface": "#dde3ef",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#bbc9ca",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "primary": "#00ADB5",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#171c23",
+                        "secondary": "#c2c7d0",
+                        "on-background": "#EEEEEE",
+                        "tertiary": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed-dim": "#00ADB5",
+                        "primary-fixed": "#00ADB5",
+                        "on-secondary-container": "#b7bcc6",
+                        "outline-variant": "#3c494a",
+                        "surface-variant": "#393E46",
+                        "on-primary": "#222831",
+                        "surface-tint": "#00ADB5",
+                        "tertiary-container": "#9b9c9c",
+                        "secondary-container": "#474c54",
+                        "background": "#222831",
+                        "surface-dim": "#222831",
+                        "surface-bright": "#393E46",
+                        "secondary-fixed-dim": "#c2c7d0",
+                        "on-tertiary-container": "#323434",
+                        "on-primary-fixed-variant": "#004f53",
+                        "on-secondary-fixed-variant": "#42474f",
+                        "secondary-fixed": "#dee2ed",
+                        "inverse-on-surface": "#2b313a",
+                        "outline": "#869394",
+                        "on-tertiary": "#2f3131",
+                        "on-surface": "#EEEEEE",
+                        "on-primary-container": "#003a3d",
+                        "surface-container": "#222831",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#00ADB5",
+                        "on-secondary": "#2c3138",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-high": "#393E46",
+                        "tertiary-fixed": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#00696e",
+                        "surface-container-highest": "#393E46",
+                        "surface-container-low": "#222831",
+                        "on-primary-fixed": "#222831",
+                        "surface": "#222831"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Orbitron", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"],
+                        "label": ["DM Sans", "sans-serif"],
+                        "mono": ["DM Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #222831;
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 173, 181, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+            color: #EEEEEE;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(57, 62, 70, 0.72);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(0, 173, 181, 0.15);
+        }
+        .orbitron-heavy { font-family: 'Orbitron', sans-serif; font-weight: 900; letter-spacing: 0.05em; }
+        .dm-mono { font-family: 'DM Mono', monospace; }
+        .glow-primary { box-shadow: 0 0 20px rgba(0, 173, 181, 0.3); }
+        .teal-gradient { background: linear-gradient(135deg, #00ADB5 0%, #008a91 100%); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-[#222831]/90 backdrop-blur-[14px] flex flex-col py-6 px-4 shadow-[40px_0_40px_rgba(0,173,181,0.06)] z-50 border-r border-white/5">
+<div class="mb-10 px-2 flex items-center gap-3">
+<div class="w-10 h-10 teal-gradient rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[#222831]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-[#00ADB5] tracking-[0.05em] uppercase orbitron-heavy leading-none">ETHYX AI</h1>
+<p class="text-[10px] text-[#EEEEEE]/50 uppercase tracking-widest mt-1">Bias Audit Pro</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-[#393E46]/72 hover:text-[#00ADB5] transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined">cloud_upload</span>
+<span class="font-medium">Upload</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#00ADB5] font-bold border-r-2 border-[#00ADB5] bg-[#00ADB5]/5 transition-all duration-300 rounded-l-lg group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-[#393E46]/72 hover:text-[#00ADB5] transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-medium">Explain</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-[#393E46]/72 hover:text-[#00ADB5] transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-medium">Mitigate</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-[#393E46]/72 hover:text-[#00ADB5] transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-medium">Report</span>
+</a>
+</nav>
+<div class="mt-auto">
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-[#393E46]/72 hover:text-[#00ADB5] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-medium">Profile</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 left-[240px] h-[56px] bg-[#222831]/70 backdrop-blur-[14px] flex justify-between items-center px-8 z-40 border-b border-white/5">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold text-[#EEEEEE] orbitron-heavy">ETHYX AI</span>
+<span class="px-2 py-0.5 bg-[#00ADB5]/10 text-[#00ADB5] text-[10px] rounded border border-[#00ADB5]/20 font-bold uppercase tracking-wider">v2.4.0</span>
+</div>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#00ADB5] border-b border-[#00ADB5] pb-1 text-sm font-medium" href="#">Dashboard</a>
+<a class="text-[#EEEEEE]/70 hover:text-[#00ADB5] transition-opacity pb-1 text-sm font-medium" href="#">Metrics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-[#393E46] rounded-full px-4 py-1.5 gap-3 border border-white/5">
+<span class="text-xs font-bold text-[#EEEEEE]/70 uppercase tracking-tighter">Technical View</span>
+<div class="w-8 h-4 bg-[#00ADB5] rounded-full relative cursor-pointer">
+<div class="absolute right-0.5 top-0.5 w-3 h-3 bg-[#222831] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="p-2 hover:bg-[#393E46] rounded-full transition-colors"><span class="material-symbols-outlined text-on-surface">notifications</span></button>
+<button class="p-2 hover:bg-[#393E46] rounded-full transition-colors"><span class="material-symbols-outlined text-on-surface">chat_bubble</span></button>
+<button class="p-2 hover:bg-[#393E46] rounded-full transition-colors"><span class="material-symbols-outlined text-on-surface">settings</span></button>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-[#393E46] border border-[#00ADB5]/30 ml-2">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional man in high-tech setting with soft teal lighting reflecting on his face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIooQgAyoFepNt-yd9Z3y3w2a-Z3vyrR4fblVsKrIGzqh002fan1YXeooE8ToZRsTkTaxgdoJh_Gh1MCxBhZHKn9M-BtTLKgQwn5FlozUcx_SCc4A2RDWB_rA-UbH9tEqRmyYL93r1b5lHalFnlJ_IHTwszcgD66Y6X3Ahnjkl6zD2b1ulKf8z5oAiqlUaMQ3NjO3_SFOsdza7RftLR_McxJgrg-grSTlcnDvd22S2AMIgddZpoEGGVPTnaZWFpsys6_mtT3neNIlJ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] pt-[56px] pb-[32px] min-h-screen p-8 flex-1">
+<!-- Breadcrumbs & Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<nav class="flex items-center gap-2 text-xs text-[#EEEEEE]/40 mb-2 uppercase tracking-widest dm-mono">
+<span>Audit Library</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span>HR Models</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-[#00ADB5]/60">Hiring &amp; Recruitment</span>
+</nav>
+<h2 class="text-4xl orbitron-heavy text-[#EEEEEE]">Hiring &amp; Recruitment Model</h2>
+<div class="flex items-center gap-4 mt-2">
+<span class="flex items-center gap-1.5 text-xs font-mono text-[#00ADB5] bg-[#00ADB5]/5 px-3 py-1 rounded-full border border-[#00ADB5]/20">
+<span class="w-1.5 h-1.5 bg-[#00ADB5] rounded-full"></span> LIVE MONITORING
+                    </span>
+<span class="text-xs text-[#EEEEEE]/40 italic">Last scanned: 14 mins ago</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg border border-[#00ADB5]/40 text-[#00ADB5] font-bold hover:bg-[#00ADB5]/5 transition-all">
+                    Share Audit
+                </button>
+<button class="px-6 py-2.5 rounded-lg teal-gradient text-[#222831] font-bold glow-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Download Report
+                </button>
+</div>
+</div>
+<!-- KPI Cards Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<!-- Risk Score -->
+<div class="glass-card p-6 rounded-[14px] relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-colors"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-[#EEEEEE]/60 uppercase tracking-widest">Risk Score</span>
+<span class="material-symbols-outlined text-amber-500">warning</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl orbitron-heavy text-amber-500">67</span>
+<span class="text-lg font-mono text-[#EEEEEE]/40">/100</span>
+</div>
+<div class="mt-4 h-1.5 w-full bg-[#222831] rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 w-[67%]"></div>
+</div>
+<p class="mt-3 text-xs text-[#EEEEEE]/40">Moderate Bias Probability detected</p>
+</div>
+<!-- Female Impact -->
+<div class="glass-card p-6 rounded-[14px] relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-error/10 rounded-full blur-3xl group-hover:bg-error/20 transition-colors"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-[#EEEEEE]/60 uppercase tracking-widest">Female Impact</span>
+<span class="material-symbols-outlined text-error">trending_down</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl orbitron-heavy text-error">-24%</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="text-[10px] font-mono text-error uppercase px-1.5 py-0.5 border border-error/20 bg-error/5">Significant Delta</span>
+</div>
+<p class="mt-3 text-xs text-[#EEEEEE]/40">Relative to male candidates baseline</p>
+</div>
+<!-- Disparate Impact -->
+<div class="glass-card p-6 rounded-[14px] relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-error/10 rounded-full blur-3xl group-hover:bg-error/20 transition-colors"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-[#EEEEEE]/60 uppercase tracking-widest">Disparate Impact</span>
+<span class="material-symbols-outlined text-error">priority_high</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl orbitron-heavy text-error">0.74</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="text-[10px] font-mono text-error uppercase px-1.5 py-0.5 border border-error/20 bg-error/5">Below 0.8 Threshold</span>
+</div>
+<p class="mt-3 text-xs text-[#EEEEEE]/40">Violates '4/5ths Rule' compliance</p>
+</div>
+<!-- Rows Analyzed -->
+<div class="glass-card p-6 rounded-[14px] relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-[#00ADB5]/10 rounded-full blur-3xl group-hover:bg-[#00ADB5]/20 transition-colors"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-[#EEEEEE]/60 uppercase tracking-widest">Rows Analyzed</span>
+<span class="material-symbols-outlined text-[#00ADB5]">analytics</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl orbitron-heavy text-[#00ADB5]">500</span>
+<span class="text-sm font-mono text-[#EEEEEE]/40 uppercase">K</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="text-[10px] font-mono text-[#00ADB5] uppercase px-1.5 py-0.5 border border-[#00ADB5]/20 bg-[#00ADB5]/5">Dataset Complete</span>
+</div>
+<p class="mt-3 text-xs text-[#EEEEEE]/40">Audit coverage: 100% of historical data</p>
+</div>
+</div>
+<!-- Main Analytics Grid -->
+<div class="flex flex-col xl:flex-row gap-8 mb-8">
+<!-- Left Column (65%) -->
+<div class="w-full xl:w-[65%] flex flex-col gap-8">
+<!-- Bar Chart Glass Card -->
+<div class="glass-card p-8 rounded-[14px]">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h3 class="orbitron-heavy text-xl uppercase tracking-wider text-on-surface">Approval Rate Gap</h3>
+<p class="text-sm text-[#EEEEEE]/60 mt-1">Cross-referencing Gender with Departmental Allocations</p>
+</div>
+<div class="flex gap-2">
+<span class="flex items-center gap-1.5 text-[10px] text-[#EEEEEE]/60"><span class="w-2 h-2 rounded-full bg-[#00ADB5]"></span> Male</span>
+<span class="flex items-center gap-1.5 text-[10px] text-[#EEEEEE]/60"><span class="w-2 h-2 rounded-full bg-error"></span> Female</span>
+</div>
+</div>
+<div class="h-[300px] flex items-end justify-between gap-12 px-4">
+<!-- Engineering -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex justify-center gap-1.5 h-full items-end">
+<div class="w-full bg-[#00ADB5]/40 rounded-t h-[85%] group-hover:bg-[#00ADB5] transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100">85%</span>
+</div>
+<div class="w-full bg-error/40 rounded-t h-[42%] group-hover:bg-error transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100">42%</span>
+</div>
+</div>
+<span class="text-[10px] uppercase font-bold tracking-tighter text-[#EEEEEE]/60 mt-2">Engineering</span>
+</div>
+<!-- Product -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex justify-center gap-1.5 h-full items-end">
+<div class="w-full bg-[#00ADB5]/40 rounded-t h-[72%] group-hover:bg-[#00ADB5] transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100">72%</span>
+</div>
+<div class="w-full bg-error/40 rounded-t h-[58%] group-hover:bg-error transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100">58%</span>
+</div>
+</div>
+<span class="text-[10px] uppercase font-bold tracking-tighter text-[#EEEEEE]/60 mt-2">Product</span>
+</div>
+<!-- Sales -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex justify-center gap-1.5 h-full items-end">
+<div class="w-full bg-[#00ADB5]/40 rounded-t h-[90%] group-hover:bg-[#00ADB5] transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100">90%</span>
+</div>
+<div class="w-full bg-error/40 rounded-t h-[88%] group-hover:bg-error transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100">88%</span>
+</div>
+</div>
+<span class="text-[10px] uppercase font-bold tracking-tighter text-[#EEEEEE]/60 mt-2">Sales</span>
+</div>
+<!-- Design -->
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex justify-center gap-1.5 h-full items-end">
+<div class="w-full bg-[#00ADB5]/40 rounded-t h-[65%] group-hover:bg-[#00ADB5] transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100">65%</span>
+</div>
+<div class="w-full bg-error/40 rounded-t h-[70%] group-hover:bg-error transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100">70%</span>
+</div>
+</div>
+<span class="text-[10px] uppercase font-bold tracking-tighter text-[#EEEEEE]/60 mt-2">Design</span>
+</div>
+</div>
+</div>
+<!-- CRITICAL ALERTS Feed Panel -->
+<div class="glass-card rounded-[14px] flex flex-col overflow-hidden">
+<div class="p-4 border-b border-white/5 bg-[#00ADB5]/5 flex justify-between items-center">
+<h3 class="orbitron-heavy text-sm uppercase tracking-wider text-[#EEEEEE] flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                            CRITICAL ALERTS FEED
+                        </h3>
+<span class="text-[10px] font-mono text-[#00ADB5]">7 ACTIVE ISSUES</span>
+</div>
+<div class="p-0 overflow-y-auto max-h-[220px]">
+<table class="w-full text-left text-xs font-mono">
+<thead class="bg-[#222831]/50 text-[#EEEEEE]/40 uppercase">
+<tr>
+<th class="px-6 py-3 font-normal">ID</th>
+<th class="px-6 py-3 font-normal">TIMESTAMP</th>
+<th class="px-6 py-3 font-normal">INCIDENT</th>
+<th class="px-6 py-3 font-normal text-right">STATUS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-error font-bold">ALRT_392</td>
+<td class="px-6 py-4 text-[#EEEEEE]/60">14:02:11</td>
+<td class="px-6 py-4 text-[#EEEEEE]/90">Disparate Impact Threshold Breach - Engineering</td>
+<td class="px-6 py-4 text-right"><span class="px-2 py-0.5 rounded bg-error/10 text-error border border-error/20">CRITICAL</span></td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-amber-500 font-bold">ALRT_388</td>
+<td class="px-6 py-4 text-[#EEEEEE]/60">13:45:04</td>
+<td class="px-6 py-4 text-[#EEEEEE]/90">Statistical Parity Deviation in 'Age' weighting</td>
+<td class="px-6 py-4 text-right"><span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20">WARNING</span></td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-error font-bold">ALRT_385</td>
+<td class="px-6 py-4 text-[#EEEEEE]/60">12:11:59</td>
+<td class="px-6 py-4 text-[#EEEEEE]/90">Proximal Attribute Leakage detected: Zip Code</td>
+<td class="px-6 py-4 text-right"><span class="px-2 py-0.5 rounded bg-error/10 text-error border border-error/20">CRITICAL</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column (35%) -->
+<div class="w-full xl:w-[35%] flex flex-col gap-8">
+<!-- Heatmap Glass Card -->
+<div class="glass-card p-6 rounded-[14px]">
+<h3 class="orbitron-heavy text-lg uppercase tracking-wider text-[#EEEEEE] mb-6">Bias Heatmap Matrix</h3>
+<div class="grid grid-cols-5 gap-1 mb-2">
+<div class="h-10 bg-[#00ADB5]/5 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/20 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/10 rounded-sm"></div>
+<div class="h-10 bg-error/40 rounded-sm"></div>
+<div class="h-10 bg-error/80 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/20 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/40 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/5 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/10 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/30 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/50 rounded-sm"></div>
+<div class="h-10 bg-error/60 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/10 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/5 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/5 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/10 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/10 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/20 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/5 rounded-sm"></div>
+<div class="h-10 bg-[#00ADB5]/30 rounded-sm"></div>
+</div>
+<div class="flex justify-between text-[8px] uppercase tracking-widest text-[#EEEEEE]/40 font-mono">
+<span>Low Deviation</span>
+<span>Critical Bias</span>
+</div>
+</div>
+<!-- AI Chat Panel -->
+<div class="glass-card flex-1 min-h-[500px] flex flex-col rounded-[14px] overflow-hidden border-[#00ADB5]/30">
+<div class="p-5 border-b border-white/5 flex items-center justify-between bg-[#00ADB5]/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00ADB5] text-xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<div>
+<h4 class="text-sm orbitron-heavy uppercase tracking-tighter">ETHYX AI Assistant</h4>
+<p class="text-[10px] text-[#00ADB5]/70 font-mono">MITIGATION PROTOCOL ACTIVE</p>
+</div>
+</div>
+<button class="p-1.5 hover:bg-[#393E46] rounded-lg transition-colors"><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</div>
+<div class="flex-1 p-6 space-y-6 overflow-y-auto max-h-[360px]">
+<!-- Assistant Message -->
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#00ADB5]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#00ADB5] text-sm">psychology</span>
+</div>
+<div class="space-y-3">
+<p class="text-sm text-[#EEEEEE]/90 bg-[#393E46]/50 p-3 rounded-tr-xl rounded-b-xl border border-white/5">
+                                    I've analyzed the disparity in Engineering hires. The feature <span class="font-mono text-[#00ADB5] bg-[#00ADB5]/5 px-1">'Github Contribution Frequency'</span> has a 0.82 correlation with the bias outcome. 
+                                </p>
+<div class="bg-[#00ADB5]/5 border border-[#00ADB5]/20 p-3 rounded-lg">
+<h5 class="text-[10px] font-bold text-[#00ADB5] uppercase mb-1">Recommendation</h5>
+<p class="text-xs text-[#EEEEEE]/80">Apply re-weighing to the training dataset to neutralize the influence of contribution gaps caused by career breaks.</p>
+</div>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex gap-3 flex-row-reverse">
+<div class="w-8 h-8 rounded-lg bg-[#393E46] flex items-center justify-center shrink-0 border border-white/5">
+<span class="material-symbols-outlined text-[#EEEEEE]/40 text-sm">person</span>
+</div>
+<div class="bg-[#00ADB5]/10 p-3 rounded-tl-xl rounded-b-xl border border-[#00ADB5]/20 max-w-[80%]">
+<p class="text-sm text-[#EEEEEE]">Can we simulate the impact of removing that feature entirely?</p>
+</div>
+</div>
+</div>
+<div class="p-4 bg-[#222831]/50">
+<div class="relative">
+<input class="w-full bg-[#393E46] border border-white/10 rounded-xl py-3 px-4 pr-12 text-sm focus:outline-none focus:border-[#00ADB5]/50 focus:ring-1 focus:ring-[#00ADB5]/50 transition-all text-[#EEEEEE]" placeholder="Ask ETHYX AI to mitigate..." type="text"/>
+<button class="absolute right-2 top-1.5 p-2 bg-[#00ADB5] text-[#222831] rounded-lg glow-primary">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- System Footer Metadata -->
+<footer class="mt-4 pt-4 border-t border-white/5 flex justify-between items-center text-[#EEEEEE]/20">
+<div class="flex items-center gap-8">
+<span class="text-[10px] uppercase tracking-widest dm-mono">System Integrity: 99.9%</span>
+<span class="text-[10px] uppercase tracking-widest dm-mono">Audit Hash: 0x8F2...3A1</span>
+</div>
+<div class="text-[10px] uppercase tracking-widest">
+                © 2024 ETHYX AI QUANTUM AUDIT SYSTEMS
+            </div>
+</footer>
+</main>
+<!-- Global Status Footer Bar -->
+<div class="fixed bottom-0 left-[240px] right-0 h-8 bg-[#222831] border-t border-white/10 z-[60] px-8 flex items-center justify-between font-mono text-[9px] uppercase tracking-widest text-[#EEEEEE]/60">
+<div class="flex gap-6 items-center">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-[#00ADB5] animate-pulse"></span>
+<span>ENGINE: <span class="text-[#00ADB5]">LIVE</span></span>
+</div>
+<div class="flex items-center gap-2 border-l border-white/10 pl-6">
+<span class="material-symbols-outlined text-[12px]">speed</span>
+<span>LATENCY: <span class="text-[#00ADB5]">24MS</span></span>
+</div>
+<div class="flex items-center gap-2 border-l border-white/10 pl-6">
+<span class="material-symbols-outlined text-[12px]">cloud_sync</span>
+<span>LAST BACKUP: <span class="text-[#EEEEEE]">12 MIN AGO</span></span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="bg-[#393E46] px-2 py-0.5 rounded text-[#00ADB5]">V4.8.2-STABLE</span>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#00ADB5]/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-5%] left-[10%] w-[30%] h-[30%] bg-[#00ADB5]/3 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

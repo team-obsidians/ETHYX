@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual Environments
+venv/
+.venv/
+
+# Build artifacts
+.next/
+out/
+dist/
+*.tsbuildinfo
+frontend/tsconfig.tsbuildinfo
+.turbo/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env.local
+
+# IDE & Caching
+.vscode/
+.idea/
+.pytest_cache/
+.cache/
+.vercel/
+.netlify/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & Data
+*.log
+uploads/
+data/
+tmp/
+
+# Debug output
+.code-review-graph/
+graphify-out/
+scratch/
+.agents/
+*.zip

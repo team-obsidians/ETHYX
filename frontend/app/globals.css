@@ -1,0 +1,226 @@
+/* c:\Obsidian\Ethyx\frontend\app\globals.css */
+/* ETHYX AI — Global styles, design tokens, and shadcn dark theme overrides */
+
+/* ═══════════════════════════════════════════════════
+   FONTS — Configured via next/font in layout.tsx
+   ═══════════════════════════════════════════════════ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════
+   CSS CUSTOM PROPERTIES — Design Tokens
+   ═══════════════════════════════════════════════════ */
+@layer base {
+  :root {
+    /* Background layers */
+    --bg-base: #222831;
+    --bg-surface: #1C2128;
+    --bg-card: rgba(57, 62, 70, 0.72);
+    --bg-input: #393E46;
+    --bg-hover: rgba(0, 173, 181, 0.05);
+
+    /* Primary accent */
+    --teal: #00ADB5;
+    --teal-dark: #008891;
+    --teal-light: #55d8e1;
+    --teal-dim: rgba(0, 173, 181, 0.12);
+    --teal-glow: rgba(0, 173, 181, 0.25);
+    --teal-bg: rgba(0, 173, 181, 0.08);
+
+    /* Semantic */
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+
+    /* Text */
+    --text-primary: #EEEEEE;
+    --text-secondary: #AABBC4;
+    --text-muted: #6B8090;
+    --text-faint: #4A5360;
+
+    /* Borders */
+    --border-default: rgba(0, 173, 181, 0.12);
+    --border-subtle: rgba(0, 173, 181, 0.08);
+    --border-strong: rgba(0, 173, 181, 0.25);
+    --border-base: #393E46;
+
+    /* Radii */
+    --radius-card: 14px;
+    --radius-btn: 8px;
+    --radius-badge: 99px;
+
+    /* Shadows */
+    --shadow-teal-glow: 0 0 20px rgba(0, 173, 181, 0.25);
+    --shadow-teal-glow-lg: 0 0 30px rgba(0, 173, 181, 0.35), 0 0 60px rgba(0, 173, 181, 0.1);
+
+    /* ─── shadcn/ui CSS variable overrides (dark ETHYX theme) ─── */
+    --background: 222 15% 16%;
+    --foreground: 210 33% 93%;
+    --card: 215 10% 25%;
+    --card-foreground: 210 33% 93%;
+    --popover: 215 15% 16%;
+    --popover-foreground: 210 33% 93%;
+    --primary: 183 100% 35%;
+    --primary-foreground: 215 15% 16%;
+    --secondary: 210 8% 25%;
+    --secondary-foreground: 210 33% 93%;
+    --muted: 210 8% 25%;
+    --muted-foreground: 200 13% 53%;
+    --accent: 183 100% 35%;
+    --accent-foreground: 215 15% 16%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 33% 93%;
+    --border: 183 100% 35% / 0.12;
+    --input: 210 8% 25%;
+    --ring: 183 100% 35%;
+    --radius: 0.5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════ */
+@layer base {
+  * {
+    @apply border-border-default;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-base text-text-primary font-dm-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(0, 173, 181, 0.3);
+    color: #EEEEEE;
+  }
+
+  /* Focus visible */
+  :focus-visible {
+    outline: 2px solid #00ADB5;
+    outline-offset: 2px;
+  }
+
+  /* Scrollbar — thin teal track */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1C2128;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 173, 181, 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 173, 181, 0.5);
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 173, 181, 0.3) #1C2128;
+  }
+
+  /* Chrome autofill dark fix */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #EEEEEE;
+    -webkit-box-shadow: 0 0 0px 1000px #393E46 inset;
+    transition: background-color 5000s ease-in-out 0s;
+    border-color: rgba(0, 173, 181, 0.12);
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════ */
+@layer utilities {
+  /* Dot grid background — apply to every page wrapper */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(0, 173, 181, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Glassmorphism card */
+  .glass {
+    background: rgba(57, 62, 70, 0.72);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 173, 181, 0.12);
+    border-radius: 14px;
+  }
+
+  /* Sonner toast theme integration */
+  .cn-toast {
+    --normal-bg: hsl(var(--popover));
+    --normal-text: hsl(var(--popover-foreground));
+    --normal-border: hsl(var(--border));
+    --border-radius: var(--radius);
+  }
+
+  /* Ambient teal glow — top-right corner of every page */
+  .ambient-glow {
+    background: radial-gradient(ellipse 600px at 100% 0%, rgba(0, 173, 181, 0.08), transparent);
+  }
+
+  /* Teal text glow for display text */
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
+  }
+
+  /* Tabular nums for metrics */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Shimmer animation for loading bars */
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) skewX(-30deg); }
+    100% { transform: translateX(200%) skewX(-30deg); }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  /* Scanline effect for loading overlay */
+  @keyframes scan {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
+  }
+
+  .scanline {
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 173, 181, 0.03) 50%);
+    background-size: 100% 4px;
+    animation: scan 8s linear infinite;
+  }
+
+  /* Rotating glow for conic-gradient border effect */
+  @keyframes rotate-glow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .rotating-glow {
+    background: conic-gradient(from 0deg, transparent 40%, #00ADB5 50%, transparent 60%);
+    animation: rotate-glow 6s linear infinite;
+  }
+}

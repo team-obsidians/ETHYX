@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=DM+Sans:wght@400;500;700&amp;family=DM+Mono&amp;family=Orbitron:wght@400;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#080f17",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-highest": "#2f353e",
+                        "on-secondary": "#2c3138",
+                        "inverse-primary": "#00696e",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface": "#0e141c",
+                        "primary-container": "#00adb5",
+                        "secondary": "#c2c7d0",
+                        "surface-variant": "#2f353e",
+                        "on-secondary-container": "#b7bcc6",
+                        "on-secondary-fixed-variant": "#42474f",
+                        "primary-fixed-dim": "#55d8e1",
+                        "on-tertiary": "#2f3131",
+                        "on-surface": "#dde3ef",
+                        "error": "#ffb4ab",
+                        "background": "#0e141c",
+                        "inverse-surface": "#dde3ef",
+                        "surface-container-low": "#161c25",
+                        "secondary-fixed-dim": "#c2c7d0",
+                        "on-surface-variant": "#bbc9ca",
+                        "on-primary": "#003739",
+                        "surface-bright": "#343a43",
+                        "outline-variant": "#3c494a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-background": "#dde3ef",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#75f5fd",
+                        "on-primary-fixed-variant": "#004f53",
+                        "tertiary-container": "#9b9c9c",
+                        "surface-tint": "#55d8e1",
+                        "inverse-on-surface": "#2b313a",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-dim": "#0e141c",
+                        "surface-container-high": "#242a33",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#dee2ed",
+                        "tertiary": "#c6c6c7",
+                        "on-primary-fixed": "#002022",
+                        "on-secondary-fixed": "#171c23",
+                        "on-primary-container": "#003a3d",
+                        "outline": "#869394",
+                        "on-tertiary-container": "#323434",
+                        "secondary-container": "#474c54",
+                        "primary": "#55d8e1",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#1a2029"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"],
+                        "mono": ["DM Mono"],
+                        "orbitron": ["Orbitron"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .dot-grid {
+            background-image: radial-gradient(#55d8e1 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.15;
+        }
+        .mesh-gradient {
+            background-color: #0e141c;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(85, 216, 225, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 173, 181, 0.05) 0px, transparent 50%);
+        }
+        .grain-texture {
+            filter: url(#noiseFilter);
+        }
+        .neumorphic-inset {
+            background: #161c25;
+            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4), 
+                        inset -2px -2px 6px rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(85, 216, 225, 0.05);
+        }
+        .sapphire-btn {
+            background: linear-gradient(135deg, #55d8e1 0%, #00adb5 100%);
+            box-shadow: 0 4px 0 #00696e, 
+                        0 10px 20px rgba(0, 173, 181, 0.3),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+            transition: all 0.2s ease;
+        }
+        .sapphire-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #00696e, 
+                        0 5px 10px rgba(0, 173, 181, 0.3);
+        }
+        .laser-glow {
+            box-shadow: 0 0 0 1px rgba(85, 216, 225, 0.2), 
+                        0 0 15px rgba(85, 216, 225, 0.1);
+        }
+        .orb-blur {
+            filter: blur(120px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary selection:text-on-primary overflow-x-hidden min-h-screen">
+<!-- SVG Noise Filter -->
+<svg class="hidden">
+<filter id="noiseFilter">
+<feturbulence basefrequency="0.6" numoctaves="3" stitchtiles="stitch" type="fractalNoise"></feturbulence>
+<fecolormatrix type="saturate" values="0"></fecolormatrix>
+<fecomponenttransfer>
+<fefunca slope="0.03" type="linear"></fefunca>
+</fecomponenttransfer>
+</filter>
+</svg>
+<!-- Background Elements -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 dot-grid"></div>
+<div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-primary/10 orb-blur"></div>
+<div class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary-container/5 orb-blur"></div>
+</div>
+<!-- Layout Container -->
+<main class="relative z-10 flex min-h-screen items-center justify-center p-4 md:p-8">
+<!-- Split-Card Container -->
+<div class="w-full max-w-5xl bg-surface-container-low rounded-3xl overflow-hidden flex flex-col md:flex-row laser-glow border border-primary/20 shadow-2xl backdrop-blur-md relative">
+<!-- Left Side: Visual/Context (40%) -->
+<div class="w-full md:w-2/5 relative min-h-[300px] md:min-h-[600px] bg-surface-container overflow-hidden group">
+<div class="absolute inset-0 mesh-gradient opacity-50"></div>
+<div class="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-40 group-hover:opacity-60 transition-opacity duration-700" data-alt="Abstract cinematic visualization of digital neural networks with teal light streaks on a dark obsidian background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAY69t-wCNbk6JzxfwVIb8mxSWWb1lSUZKGmt1Wwu75KZHdhCN6I26V4bIHKqRoHPcKqZ6zAlvh-H6vvIeev303sYnlCn9a8wIPxnSFWolgs0jWYMaRPaHxjBNCTivD4fIl8dUpfZQ4x6oKchJM2vnOTK5x_Nghw8nMAi9X8LxaXJBVBOksbG1541fDTx5nMSoTNKvtGpsaYOr-uA5nXMdYl2ttLzUcDzrNgiQkpnL91CI4RxC9fi6q9JkzB-VioDaoBuS19z0jLa2r");'></div>
+<div class="absolute inset-0 p-12 flex flex-col justify-end bg-gradient-to-t from-surface to-transparent">
+<div class="space-y-6">
+<div class="flex items-center gap-2">
+<span class="font-orbitron font-black text-2xl tracking-tighter text-on-surface uppercase" style="">ETHYX AI</span>
+</div>
+<h2 class="font-orbitron text-3xl font-black leading-tight text-white" style="">
+                            SECURE THE <br/>
+<span class="text-primary" style="">NEURAL FRONTIER.</span>
+</h2>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed max-w-xs" style="">
+                            Access our full suite of AI integrity audits and bias detection tools. Precision-engineered for enterprise scale.
+                        </p>
+<!-- System Status Micro-Component -->
+<div class="pt-8 border-t border-white/5 flex items-center gap-6">
+<div class="flex flex-col">
+<span class="font-mono text-[10px] text-primary/60 tracking-widest uppercase" style="">LATENCY</span>
+<span class="font-mono text-white text-xs" style="">14ms</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono text-[10px] text-primary/60 tracking-widest uppercase" style="">STATUS</span>
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_#55d8e1]"></div>
+<span class="font-mono text-white text-xs" style="">NOMINAL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Form (60%) -->
+<div class="w-full md:w-3/5 p-8 md:p-16 flex flex-col justify-center relative">
+<div class="absolute inset-0 grain-texture pointer-events-none opacity-[0.03]"></div>
+<div class="w-full max-w-md mx-auto space-y-10">
+<header>
+<h1 class="font-orbitron text-xl font-bold tracking-widest uppercase text-on-surface" style="">Provision Account</h1>
+<p class="text-on-surface-variant text-xs mt-2 font-body" style="">Enter credentials to initialize secure environment.</p>
+</header>
+<!-- Google Auth Section -->
+<div class="space-y-6 mb-8">
+<button class="w-full py-4 rounded-lg bg-surface-container-highest border border-primary/20 flex items-center justify-center gap-3 transition-all duration-300 hover:bg-surface-bright hover:border-primary/40 group relative overflow-hidden">
+<!-- Subtle glow effect on hover -->
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<svg class="w-5 h-5 relative z-10" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="font-mono text-xs font-bold tracking-[0.1em] text-on-surface uppercase relative z-10">Continue with Google</span>
+</button>
+<!-- Divider -->
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-primary/10"></div>
+<span class="flex-shrink mx-4 font-mono text-[9px] text-on-surface-variant tracking-widest uppercase">or use neural identity</span>
+<div class="flex-grow border-t border-primary/10"></div>
+</div>
+</div><form class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<!-- Input Field -->
+<div class="space-y-2 col-span-1">
+<label class="font-mono text-[10px] text-on-surface-variant tracking-wider uppercase pl-1" style="">GIVEN NAME</label>
+<div class="neumorphic-inset rounded-lg px-4 py-3 group">
+<input class="bg-transparent border-none w-full p-0 text-sm font-mono text-primary placeholder:text-on-surface/20 focus:ring-0" placeholder="ERIK" type="text"/>
+</div>
+</div>
+<div class="space-y-2 col-span-1">
+<label class="font-mono text-[10px] text-on-surface-variant tracking-wider uppercase pl-1" style="">SURNAME</label>
+<div class="neumorphic-inset rounded-lg px-4 py-3 group">
+<input class="bg-transparent border-none w-full p-0 text-sm font-mono text-primary placeholder:text-on-surface/20 focus:ring-0" placeholder="STARK" type="text"/>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-mono text-[10px] text-on-surface-variant tracking-wider uppercase pl-1" style="">Email address</label>
+<div class="neumorphic-inset rounded-lg px-4 py-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface/30 text-lg" style="">alternate_email</span>
+<input class="bg-transparent border-none w-full p-0 text-sm font-mono text-primary placeholder:text-on-surface/20 focus:ring-0 uppercase" placeholder="ADMIN@ETHYX.AI" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-mono text-[10px] text-on-surface-variant tracking-wider uppercase pl-1" style="">ETHYX PAssword</label>
+<div class="neumorphic-inset rounded-lg px-4 py-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface/30 text-lg" style="">terminal</span>
+<input class="bg-transparent border-none w-full p-0 text-sm font-mono text-primary placeholder:text-on-surface/20 focus:ring-0" placeholder="••••••••••••" type="password"/>
+<span class="material-symbols-outlined text-on-surface/30 text-lg cursor-pointer hover:text-primary transition-colors" style="">visibility</span>
+</div>
+</div>
+<div class="flex items-center gap-3 py-2">
+<div class="relative flex items-center">
+<input class="peer h-4 w-4 rounded border-primary/20 bg-surface-container text-primary focus:ring-primary focus:ring-offset-surface" id="terms" type="checkbox"/>
+</div>
+<label class="text-[11px] text-on-surface-variant leading-tight" for="terms" style="">
+                                I ACKNOWLEDGE THE <span class="text-primary hover:underline cursor-pointer" style="">NEURAL PROTOCOLS</span> AND PRIVACY SHIELD.
+                            </label>
+</div>
+<div class="pt-4">
+<button class="sapphire-btn w-full py-4 rounded-lg font-orbitron font-bold text-on-primary-fixed tracking-[0.2em] text-sm uppercase flex items-center justify-center gap-2 group" style="" type="submit">
+                                Provision Account
+                                <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1" style="">bolt</span>
+</button>
+</div>
+</form>
+<footer class="flex items-center justify-between pt-4">
+<span class="text-[10px] font-mono text-on-surface-variant tracking-widest uppercase" style="">ALREADY REGISTERED?</span>
+<a class="text-[10px] font-mono text-primary tracking-widest uppercase font-bold hover:text-primary-fixed-dim transition-colors flex items-center gap-1 group" href="#" style="">
+                            Sign In
+                            <span class="material-symbols-outlined text-sm" style="">arrow_forward_ios</span>
+</a>
+</footer>
+</div>
+</div>
+</div>
+</main>
+<!-- Global Footer Fragment (Suppressed based on focused journey rule, but maintained for copyright) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-8 opacity-40 hover:opacity-100 transition-opacity duration-500">
+<span class="font-mono text-[9px] tracking-[0.3em] text-on-surface-variant uppercase" style="">© 2026 ETHYX AI. SECURING NEURAL INTEGRITY.</span>
+<div class="flex items-center gap-4">
+<a class="font-mono text-[9px] tracking-[0.3em] text-on-surface-variant hover:text-primary transition-colors uppercase" href="#" style="">Privacy</a>
+<a class="font-mono text-[9px] tracking-[0.3em] text-on-surface-variant hover:text-primary transition-colors uppercase" href="#" style="">Security</a>
+</div>
+</div>
+</body></html>

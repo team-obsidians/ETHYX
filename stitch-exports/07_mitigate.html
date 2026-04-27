@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETHYX AI | Mitigation Strategy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#0e141c",
+                        "on-surface-variant": "#bbc9ca",
+                        "outline-variant": "#3c494a",
+                        "inverse-on-surface": "#2b313a",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-error": "#690005",
+                        "surface-variant": "#2f353e",
+                        "secondary-fixed-dim": "#c2c7d0",
+                        "tertiary-container": "#9b9c9c",
+                        "on-tertiary": "#2f3131",
+                        "on-secondary-fixed-variant": "#42474f",
+                        "surface-bright": "#343a43",
+                        "error": "#ffb4ab",
+                        "surface-container": "#1a2029",
+                        "outline": "#869394",
+                        "surface-tint": "#55d8e1",
+                        "error-container": "#93000a",
+                        "secondary": "#c2c7d0",
+                        "surface": "#0e141c",
+                        "on-secondary-fixed": "#171c23",
+                        "on-primary-container": "#003a3d",
+                        "primary-fixed": "#75f5fd",
+                        "on-secondary": "#2c3138",
+                        "primary": "#55d8e1",
+                        "primary-container": "#00adb5",
+                        "background": "#0e141c",
+                        "primary-fixed-dim": "#55d8e1",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#080f17",
+                        "on-primary-fixed": "#002022",
+                        "surface-container-high": "#242a33",
+                        "secondary-fixed": "#dee2ed",
+                        "on-background": "#dde3ef",
+                        "surface-container-low": "#161c25",
+                        "surface-container-highest": "#2f353e",
+                        "secondary-container": "#474c54",
+                        "inverse-surface": "#dde3ef",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary-fixed-variant": "#004f53",
+                        "on-secondary-container": "#b7bcc6",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary": "#003739",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "inverse-primary": "#00696e",
+                        "tertiary": "#c6c6c7",
+                        "on-surface": "#dde3ef",
+                        "on-tertiary-container": "#323434"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["DM Sans"],
+                        "label": ["DM Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e141c;
+            background-image: radial-gradient(#55d8e1 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            background-position: 0 0;
+            color: #EEEEEE;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(57, 62, 70, 0.72);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(85, 216, 225, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-teal {
+            box-shadow: 0 0 20px rgba(0, 173, 181, 0.2);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #55d8e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+<!-- Active Route Bar -->
+<div class="fixed top-0 left-0 w-full h-[2px] bg-primary z-[100] shadow-[0_0_10px_rgba(85,216,225,0.8)]"></div>
+<!-- Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-[#55d8e1]/10 bg-[#0e141c] flex flex-col py-6 z-50 shadow-[40px_0_60px_-15px_rgba(0,173,181,0.05)]">
+<div class="px-6 mb-10">
+<h1 class="text-xl font-black text-[#55d8e1] tracking-[0.05em] font-['Space_Grotesk']">ETHYX AI</h1>
+<p class="text-[10px] uppercase tracking-widest text-[#EEEEEE]/40 mt-1">Bias Audit Suite</p>
+</div>
+<nav class="flex-1 space-y-2 px-3">
+<a class="flex items-center gap-4 px-4 py-3 text-[#EEEEEE]/50 hover:text-[#EEEEEE] hover:bg-[#393e46]/40 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Grotesk'] tracking-wider text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#EEEEEE]/50 hover:text-[#EEEEEE] hover:bg-[#393e46]/40 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-['Space_Grotesk'] tracking-wider text-sm">Audit</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#EEEEEE]/50 hover:text-[#EEEEEE] hover:bg-[#393e46]/40 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<span class="font-['Space_Grotesk'] tracking-wider text-sm">Explain</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 bg-[#00adb5]/10 text-[#55d8e1] border-r-2 border-[#55d8e1] transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="auto_fix_high" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+<span class="font-['Space_Grotesk'] tracking-wider text-sm">Mitigate</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#EEEEEE]/50 hover:text-[#EEEEEE] hover:bg-[#393e46]/40 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-['Space_Grotesk'] tracking-wider text-sm">Logs</span>
+</a>
+</nav>
+<div class="mt-auto px-6 pt-6 border-t border-[#55d8e1]/5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-primary-container flex items-center justify-center text-on-primary-fixed text-xs font-bold">
+                    JD
+                </div>
+<div>
+<p class="text-xs font-bold">James D.</p>
+<p class="text-[10px] text-[#EEEEEE]/40">Chief Auditor</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top App Bar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-[#0e141c]/80 backdrop-blur-md z-40 border-b border-[#55d8e1]/10 flex items-center justify-between px-8">
+<div class="flex items-center gap-8">
+<nav class="flex items-center gap-6">
+<a class="text-[#55d8e1] font-bold border-b border-[#55d8e1] font-['Space_Grotesk'] text-sm uppercase tracking-widest pb-1" href="#">Mitigation Strategy</a>
+<a class="text-[#EEEEEE]/60 hover:text-[#55d8e1] transition-colors font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="#">Comparison</a>
+<a class="text-[#EEEEEE]/60 hover:text-[#55d8e1] transition-colors font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="#">Final Audit</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-[#EEEEEE]/60">
+<button class="hover:text-[#55d8e1] transition-opacity opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:text-[#55d8e1] transition-opacity opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-6 w-[1px] bg-[#55d8e1]/20"></div>
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 h-screen flex flex-col">
+<!-- Header Section -->
+<section class="px-10 py-8">
+<div class="flex items-end justify-between">
+<div>
+<h2 class="font-['Space_Grotesk'] text-4xl font-black tracking-tight text-[#EEEEEE]">
+                        BIAS <span class="text-primary">MITIGATION</span>
+</h2>
+<p class="text-[#EEEEEE]/50 mt-2 font-['DM_Sans'] text-sm max-w-xl">
+                        Applying debiasing algorithms to the current model state. Select a strategy to preview its impact on fairness metrics and predictive performance.
+                    </p>
+</div>
+<div class="flex gap-4">
+<div class="glass-card px-4 py-2 rounded-lg flex items-center gap-3">
+<span class="text-[10px] uppercase tracking-widest text-[#EEEEEE]/40">Current Model</span>
+<span class="font-['DM_Mono'] text-primary">v2.4.0-release</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Split Content Area -->
+<section class="flex-1 px-10 pb-8 flex gap-8 overflow-hidden">
+<!-- Left Side: Strategy Grid (45%) -->
+<div class="w-[45%] flex flex-col gap-6 overflow-y-auto pr-2">
+<div class="grid grid-cols-2 gap-4">
+<!-- Reweighing (Active Selection) -->
+<div class="glass-card p-6 rounded-xl relative group ring-2 ring-primary glow-teal">
+<div class="absolute -top-2 -right-2 bg-primary text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded-full">SELECTED</div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="balance">balance</span>
+</div>
+<span class="font-['DM_Mono'] text-xs text-primary">LATENCY: +12ms</span>
+</div>
+<h3 class="font-['Space_Grotesk'] font-bold text-lg mb-2">Reweighing</h3>
+<p class="text-xs text-[#EEEEEE]/60 mb-4">Weights training samples differently to ensure fairness across demographic groups before model training.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-[#EEEEEE]/5 rounded text-[10px] text-[#EEEEEE]/40 uppercase tracking-tighter">Pre-processing</span>
+</div>
+</div>
+<!-- Adversarial Debiasing -->
+<div class="glass-card p-6 rounded-xl hover:bg-[#393e46]/40 transition-all duration-300 group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-[#EEEEEE]/10 flex items-center justify-center text-[#EEEEEE]/60 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="shield_with_heart">shield_with_heart</span>
+</div>
+<span class="font-['DM_Mono'] text-xs text-[#EEEEEE]/40">LATENCY: +85ms</span>
+</div>
+<h3 class="font-['Space_Grotesk'] font-bold text-lg mb-2">Adversarial</h3>
+<p class="text-xs text-[#EEEEEE]/60 mb-4">Trains a model to optimize for performance while minimizing the ability to predict sensitive attributes.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-[#EEEEEE]/5 rounded text-[10px] text-[#EEEEEE]/40 uppercase tracking-tighter">In-processing</span>
+</div>
+</div>
+<!-- Disparate Impact Remover -->
+<div class="glass-card p-6 rounded-xl hover:bg-[#393e46]/40 transition-all duration-300 group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-[#EEEEEE]/10 flex items-center justify-center text-[#EEEEEE]/60 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_alt">filter_alt</span>
+</div>
+<span class="font-['DM_Mono'] text-xs text-[#EEEEEE]/40">LATENCY: +5ms</span>
+</div>
+<h3 class="font-['Space_Grotesk'] font-bold text-lg mb-2">DIR Filter</h3>
+<p class="text-xs text-[#EEEEEE]/60 mb-4">Edits feature values so the ability to predict the label from the data is independent of group membership.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-[#EEEEEE]/5 rounded text-[10px] text-[#EEEEEE]/40 uppercase tracking-tighter">Pre-processing</span>
+</div>
+</div>
+<!-- Equalized Odds Post-processing -->
+<div class="glass-card p-6 rounded-xl hover:bg-[#393e46]/40 transition-all duration-300 group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-[#EEEEEE]/10 flex items-center justify-center text-[#EEEEEE]/60 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="rule">rule</span>
+</div>
+<span class="font-['DM_Mono'] text-xs text-[#EEEEEE]/40">LATENCY: +2ms</span>
+</div>
+<h3 class="font-['Space_Grotesk'] font-bold text-lg mb-2">Equalized Odds</h3>
+<p class="text-xs text-[#EEEEEE]/60 mb-4">Modifies the predicted labels of the model to optimize for equal false positive and negative rates.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-[#EEEEEE]/5 rounded text-[10px] text-[#EEEEEE]/40 uppercase tracking-tighter">Post-processing</span>
+</div>
+</div>
+</div>
+<!-- Metrics Overview -->
+<div class="glass-card p-6 rounded-xl mt-auto">
+<h4 class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-primary mb-4">Strategy Parameters</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-[#EEEEEE]/60">Target Attribute</span>
+<span class="text-xs font-bold text-[#EEEEEE]">Protected_Class_01</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-[#EEEEEE]/60">Fairness Metric</span>
+<span class="text-xs font-bold text-[#EEEEEE]">Statistical Parity Difference</span>
+</div>
+<div class="w-full bg-[#393e46]/40 h-[1px]"></div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] text-[#EEEEEE]/40 mb-1 uppercase tracking-tighter">
+<span>Optimization Intensity</span>
+<span class="font-['DM_Mono'] text-primary">0.85</span>
+</div>
+<div class="h-1 w-full bg-[#EEEEEE]/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Comparison Panel (55%) -->
+<div class="w-[55%] flex flex-col gap-6">
+<!-- Comparison Cards -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Before -->
+<div class="glass-card p-5 rounded-xl border-l-4 border-error/50">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold text-error uppercase tracking-widest">Baseline</span>
+<span class="material-symbols-outlined text-error text-lg" data-icon="history">history</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black font-['DM_Mono']">0.18</span>
+<span class="text-[10px] text-[#EEEEEE]/40 uppercase">Bias Score</span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#EEEEEE]/5 space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-[#EEEEEE]/40">Accuracy</span>
+<span class="font-['DM_Mono']">94.2%</span>
+</div>
+</div>
+</div>
+<!-- After -->
+<div class="glass-card p-5 rounded-xl border-l-4 border-primary/50 bg-gradient-to-br from-[#00adb5]/5 to-transparent">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Mitigated</span>
+<span class="material-symbols-outlined text-primary text-lg" data-icon="auto_fix_high" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black font-['DM_Mono'] text-primary">0.04</span>
+<span class="text-[10px] text-primary/60 uppercase">Bias Score</span>
+</div>
+<div class="mt-4 pt-4 border-t border-[#EEEEEE]/5 space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-[#EEEEEE]/40">Accuracy</span>
+<span class="font-['DM_Mono']">91.8%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Visualization: Delta Flow -->
+<div class="flex-1 glass-card p-6 rounded-xl flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-['Space_Grotesk'] text-sm uppercase tracking-widest font-bold">Mitigation Impact Flow</h3>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="text-[10px] text-[#EEEEEE]/40 uppercase tracking-tighter">Positive Prediction</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] text-[#EEEEEE]/40 uppercase tracking-tighter">Neutral Prediction</span>
+</div>
+</div>
+</div>
+<!-- Abstract Data Visualization -->
+<div class="flex-1 flex gap-8">
+<div class="flex-1 relative flex flex-col justify-around py-4">
+<div class="absolute left-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#EEEEEE]/20 to-transparent"></div>
+<!-- Rows of Data Nodes -->
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-['DM_Mono'] text-[#EEEEEE]/40">GRP_A</span>
+<div class="flex gap-1">
+<div class="w-4 h-4 rounded-sm bg-error/40"></div>
+<div class="w-4 h-4 rounded-sm bg-error/40"></div>
+<div class="w-4 h-4 rounded-sm bg-error/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+</div>
+<div class="w-12 h-[1px] bg-primary/20"></div>
+<div class="flex gap-1">
+<div class="w-4 h-4 rounded-sm bg-error/20 border border-error/50"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-['DM_Mono'] text-[#EEEEEE]/40">GRP_B</span>
+<div class="flex gap-1">
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+</div>
+<div class="w-12 h-[1px] bg-primary/20"></div>
+<div class="flex gap-1">
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary/40"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Code Implementation Block -->
+<div class="h-48 glass-card bg-[#0e141c] rounded-xl border border-[#55d8e1]/10 overflow-hidden flex flex-col">
+<div class="px-4 py-2 bg-[#1a2029] border-b border-[#55d8e1]/5 flex justify-between items-center">
+<span class="text-[10px] font-['DM_Mono'] text-primary uppercase tracking-widest">reweighing_processor.py</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-error/40"></div>
+<div class="w-2 h-2 rounded-full bg-yellow-400/40"></div>
+<div class="w-2 h-2 rounded-full bg-primary/40"></div>
+</div>
+</div>
+<div class="p-4 font-['DM_Mono'] text-[11px] leading-relaxed overflow-y-auto">
+<p><span class="text-primary">from</span> ethyx.mitigation <span class="text-primary">import</span> Reweighing</p>
+<p class="text-[#EEEEEE]/40 mt-1"># Initialize debiasing strategy</p>
+<p>mitigator = Reweighing(unprivileged_groups=groups, privileged_groups=p_groups)</p>
+<p>dataset_transf = mitigator.fit_transform(dataset_orig)</p>
+<p class="mt-2 text-primary"># Metric change after fit</p>
+<p>metric_new = BinaryLabelDatasetMetric(dataset_transf)</p>
+<p>print(<span class="text-tertiary">f"Disparate impact: {metric_new.disparate_impact()}"</span>)</p>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="mt-auto flex gap-4">
+<button class="flex-1 bg-primary hover:bg-primary-container text-on-primary-fixed font-['Space_Grotesk'] font-bold py-4 rounded-lg flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,173,181,0.4)]">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+                        DEPLOY MITIGATED MODEL
+                    </button>
+<button class="px-8 bg-transparent border border-[#55d8e1]/40 text-primary font-['Space_Grotesk'] font-bold py-4 rounded-lg hover:bg-primary/5 transition-colors">
+                        EXPORT REPORT
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Background Decoration Elements -->
+<div class="fixed top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -mr-48 -mt-48 z-0"></div>
+<div class="fixed bottom-0 left-64 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -ml-24 -mb-24 z-0"></div>
+</body></html>

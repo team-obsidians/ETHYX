@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETHYX AI | Executive View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&amp;family=DM+Sans:ital,wght@0,400;0,700;1,400&amp;family=DM+Mono:wght@400;500&amp;family=Space+Grotesk:wght@300;700&amp;family=Manrope:wght@300;500;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#222831",
+                    "inverse-surface": "#EEEEEE",
+                    "primary": "#00ADB5",
+                    "secondary": "#393E46",
+                    "background": "#222831",
+                    "surface": "#222831",
+                    "surface-container": "#393E46",
+                    "on-surface": "#EEEEEE",
+                    "on-background": "#EEEEEE",
+                    "outline": "#393E46",
+                    "outline-variant": "#4A4F57"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Orbitron", "Space Grotesk", "sans-serif"],
+                    "body": ["DM Sans", "Manrope", "sans-serif"],
+                    "label": ["Inter", "sans-serif"],
+                    "mono": ["DM Mono", "monospace"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .dot-grid {
+            background-image: radial-gradient(#00ADB5 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.05;
+        }
+        .glass-card {
+            background: #393E46;
+            border: 1px solid rgba(0, 173, 181, 0.1);
+        }
+        body {
+            background-color: #222831;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-hidden">
+<!-- Background Layer -->
+<div class="fixed inset-0 dot-grid pointer-events-none"></div>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-[#222831] border-r border-outline flex flex-col py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-black text-primary tracking-[0.05em] uppercase font-headline">ETHYX AI</h1>
+<p class="text-[10px] text-primary/60 font-mono tracking-widest uppercase">Bias Audit Pro</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+<span class="text-sm font-medium">Upload</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-primary font-bold border-r-2 border-primary bg-primary/5 transition-all duration-300 rounded-l-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="text-sm font-medium">Explain</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="text-sm font-medium">Mitigate</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="text-sm font-medium">Report</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#EEEEEE]/60 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/20 px-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="professional executive portrait avatar in flat minimalist vector style with a modern corporate look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB81OIv2kMNFO5ty36MtEC6ifHRNQiEqQbpvrM4YwC8A6gJ-MKM8fPMWvMI8ll4xq0_TYwG8ls68zXZe8_uz3btcTep2shHjaopk3vrsJjbJZd_XIOZw9VG-JcPDwdKdwr5Oote-CHx4EfPO6eZdenVGwrz7Tl6fhcFpWVKpwZFuv9UuzHnAqpSR1_Zcz1rGn57_Wi_lFRQSxXBYAOrRSprJbNNxYzf31bhuUSjwlvbDbK1ISSISlEs2UKwMmst3cZdEONaXlRDXRmR"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-on-surface truncate">Marcus Chen</p>
+<p class="text-[10px] text-on-surface/50 truncate">Chief Risk Officer</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[240px] min-h-screen relative pb-12">
+<!-- TopAppBar -->
+<header class="sticky top-0 h-[64px] bg-[#222831] border-b border-outline flex justify-between items-center px-8 z-40">
+<div class="flex items-center gap-8">
+<span class="text-lg font-bold text-on-surface font-headline uppercase tracking-wider underline underline-offset-8 decoration-primary decoration-2">Executive View</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface/50 hover:text-primary transition-colors text-sm py-1" href="#">Dashboard</a>
+<a class="text-on-surface/50 hover:text-primary transition-colors text-sm py-1" href="#">Metrics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Canvas Content -->
+<section class="p-8 max-w-[1600px] mx-auto grid grid-cols-12 gap-6">
+<!-- Left Column: Risk & Core Analysis -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- Featured Risk Gauge Card -->
+<div class="glass-card rounded-xl p-8 flex flex-col md:flex-row items-center gap-10">
+<div class="relative flex-shrink-0">
+<!-- Gauge Graphic -->
+<div class="w-56 h-56 rounded-full border-[14px] border-background flex flex-col items-center justify-center relative shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]">
+<div class="absolute inset-0 rounded-full border-[14px] border-primary/20"></div>
+<!-- Active Gauge Path -->
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle cx="112" cy="112" fill="transparent" r="98" stroke="#00ADB5" stroke-dasharray="615" stroke-dashoffset="221" stroke-linecap="round" stroke-width="14"></circle>
+</svg>
+<span class="text-4xl font-black font-headline text-primary">64/100</span>
+<span class="text-[10px] font-mono uppercase tracking-widest text-on-surface/40 mt-1">Audit Score</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="w-3 h-3 rounded-full bg-yellow-500 animate-pulse"></span>
+<h2 class="text-4xl font-black text-on-surface font-headline uppercase tracking-tight">Medium Risk</h2>
+</div>
+<p class="text-on-surface/70 mb-6 leading-relaxed max-w-lg">
+                        The AI Model <span class="text-primary font-mono">"Hiring-V4"</span> shows significant variance in outcomes across protected demographic groups. Immediate review required to maintain regulatory compliance.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary text-[#222831] font-bold py-3 px-6 rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-xl" data-icon="file_download">file_download</span>
+                            Download Executive Summary
+                        </button>
+<button class="border border-primary/30 text-primary py-3 px-6 rounded-lg hover:bg-primary/5 transition-all font-medium">
+                            View Technical Logs
+                        </button>
+</div>
+</div>
+</div>
+<!-- 3 Primary Plain-English Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Demographic Impact -->
+<div class="glass-card rounded-xl p-6 border-l-4 border-l-primary flex flex-col h-full">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="diversity_3">diversity_3</span>
+<h3 class="font-bold text-sm uppercase tracking-widest text-primary font-headline">Demographic Impact</h3>
+</div>
+<p class="text-on-surface/80 text-sm leading-relaxed flex-1">
+                        Disparate impact detected in female hiring pipelines, showing a 14% deviation from the base population mean in technical roles.
+                    </p>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-[10px] font-mono text-on-surface/40">STATUS: WARNING</span>
+<span class="text-primary font-bold text-xs">VIEW DATA</span>
+</div>
+</div>
+<!-- Legal Compliance -->
+<div class="glass-card rounded-xl p-6 border-l-4 border-l-red-500 flex flex-col h-full">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-red-500" data-icon="gavel">gavel</span>
+<h3 class="font-bold text-sm uppercase tracking-widest text-on-surface font-headline">Legal Compliance</h3>
+</div>
+<p class="text-on-surface/80 text-sm leading-relaxed flex-1">
+                        Legal threshold violation on gender parity identified. Potential breach of regional AI transparency mandates and EEOC guidelines.
+                    </p>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-[10px] font-mono text-on-surface/40">RISK: HIGH</span>
+<span class="text-red-500 font-bold text-xs">LEGAL BRIEF</span>
+</div>
+</div>
+<!-- Action Plan -->
+<div class="glass-card rounded-xl p-6 border-l-4 border-l-green-500 flex flex-col h-full">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-green-500" data-icon="construction">construction</span>
+<h3 class="font-bold text-sm uppercase tracking-widest text-on-surface font-headline">Action Plan</h3>
+</div>
+<p class="text-on-surface/80 text-sm leading-relaxed flex-1">
+                        Mitigation recommended via Reweighing of input features to neutralize historical training bias without impacting model precision.
+                    </p>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-[10px] font-mono text-on-surface/40">READY FOR DEPLOY</span>
+<span class="text-green-500 font-bold text-xs">EXECUTE</span>
+</div>
+</div>
+</div>
+<!-- Lower Section: Historical Performance -->
+<div class="glass-card rounded-xl p-8">
+<div class="flex justify-between items-center mb-8">
+<div class="flex items-center gap-4">
+<h3 class="font-headline font-bold text-xl uppercase tracking-wider">Model Audit History</h3>
+<div class="h-4 w-px bg-outline-variant/40"></div>
+<span class="text-xs text-on-surface/50 font-mono">Hiring-V4.2</span>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full border border-primary/20">WEEKLY</button>
+<button class="px-3 py-1 text-on-surface/40 text-[10px] font-bold rounded-full border border-outline-variant hover:bg-secondary">MONTHLY</button>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-4 border-b border-outline-variant/20 hover:bg-primary/5 px-4 -mx-4 transition-colors rounded-lg">
+<div class="flex items-center gap-6">
+<span class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_rgba(0,173,181,0.5)]"></span>
+<div>
+<p class="text-sm font-bold">Quarterly Bias Review Completed</p>
+<p class="text-[10px] text-on-surface/40 mt-0.5">Automated deep-scan of neural weights</p>
+</div>
+</div>
+<span class="font-mono text-xs text-on-surface/40">OCT 24, 2023 · 14:22</span>
+</div>
+<div class="flex justify-between items-center py-4 border-b border-outline-variant/20 hover:bg-primary/5 px-4 -mx-4 transition-colors rounded-lg">
+<div class="flex items-center gap-6">
+<span class="w-2.5 h-2.5 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></span>
+<div>
+<p class="text-sm font-bold">High Deviation Alert: Gender Bias</p>
+<p class="text-[10px] text-on-surface/40 mt-0.5">Feature sensitivity analysis triggered alert</p>
+</div>
+</div>
+<span class="font-mono text-xs text-on-surface/40">OCT 22, 2023 · 09:11</span>
+</div>
+<div class="flex justify-between items-center py-4 hover:bg-primary/5 px-4 -mx-4 transition-colors rounded-lg">
+<div class="flex items-center gap-6">
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface/20"></span>
+<div>
+<p class="text-sm font-bold">Model "Hiring-V4" Deployment Logged</p>
+<p class="text-[10px] text-on-surface/40 mt-0.5">Staging environment migration</p>
+</div>
+</div>
+<span class="font-mono text-xs text-on-surface/40">OCT 20, 2023 · 18:45</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: AI Assistant & Real-time Feed -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Real-time ALRT Feed -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="p-4 bg-secondary flex justify-between items-center border-b border-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="sensors">sensors</span>
+<h3 class="text-xs font-bold uppercase tracking-widest font-headline">Live Alert Feed</h3>
+</div>
+<span class="text-[10px] font-mono text-primary animate-pulse">LIVE</span>
+</div>
+<div class="p-4 space-y-4 max-h-[300px] overflow-y-auto">
+<div class="p-3 bg-background rounded border-l-2 border-primary">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-primary font-mono">ALRT_092</span>
+<span class="text-[9px] text-on-surface/30">2m ago</span>
+</div>
+<p class="text-[11px] text-on-surface/70 leading-relaxed">Latency spike in bias inference engine (+12ms)</p>
+</div>
+<div class="p-3 bg-background rounded border-l-2 border-yellow-500">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-yellow-500 font-mono">ALRT_088</span>
+<span class="text-[9px] text-on-surface/30">15m ago</span>
+</div>
+<p class="text-[11px] text-on-surface/70 leading-relaxed">Southeast region drift detected in model Hiring-V4</p>
+</div>
+<div class="p-3 bg-background rounded border-l-2 border-primary/20">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-on-surface/40 font-mono">ALRT_081</span>
+<span class="text-[9px] text-on-surface/30">1h ago</span>
+</div>
+<p class="text-[11px] text-on-surface/70 leading-relaxed">Daily compliance report generated for Q3</p>
+</div>
+</div>
+</div>
+<!-- AI Chat Assistant -->
+<div class="glass-card rounded-xl flex-1 flex flex-col overflow-hidden min-h-[400px]">
+<div class="p-5 border-b border-outline flex items-center justify-between bg-secondary">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="smart_toy">smart_toy</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface text-sm">Audit Assistant</h3>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_4px_#22c55e]"></span>
+<span class="text-[9px] text-on-surface/40 uppercase font-bold tracking-widest">AI Online</span>
+</div>
+</div>
+</div>
+<button class="text-on-surface/40 hover:text-on-surface">
+<span class="material-symbols-outlined text-xl" data-icon="open_in_full">open_in_full</span>
+</button>
+</div>
+<div class="flex-1 p-5 space-y-5 overflow-y-auto bg-background/50">
+<div class="flex gap-3">
+<div class="max-w-[85%] bg-secondary rounded-2xl rounded-tl-none p-4 text-[13px] text-on-surface/90 leading-relaxed border border-outline">
+                            Hello Marcus. I've finished the deep-dive on the latest hiring data. The risk level has shifted to <span class="text-primary font-bold">Medium</span> due to unexpected divergence in the Southeast region. Would you like a breakdown of the specific features causing this?
+                        </div>
+</div>
+<div class="flex flex-row-reverse gap-3">
+<div class="max-w-[85%] bg-primary/10 border border-primary/30 rounded-2xl rounded-tr-none p-4 text-[13px] text-on-surface/90 text-right leading-relaxed">
+                            What is the likely legal impact if we deploy without reweighing?
+                        </div>
+</div>
+<div class="flex gap-3">
+<div class="max-w-[85%] bg-secondary rounded-2xl rounded-tl-none p-4 text-[13px] text-on-surface/90 leading-relaxed border border-outline">
+                            Based on current EU AI Act guidelines, this model would likely fail the 4/5ths rule test, potentially leading to administrative fines and mandatory operational pauses. Reweighing reduces this risk by approx. <span class="text-primary font-bold">82%</span>.
+                        </div>
+</div>
+</div>
+<div class="p-5 bg-secondary border-t border-outline">
+<div class="relative mb-3">
+<input class="w-full bg-background border border-outline rounded-xl py-3 px-4 pr-12 text-sm focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-on-surface/30" placeholder="Ask about mitigation..." type="text"/>
+<button class="absolute right-2 top-1.5 w-9 h-9 rounded-lg bg-primary text-[#222831] flex items-center justify-center hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="send">send</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="text-[9px] uppercase font-bold tracking-widest bg-background border border-outline text-on-surface/50 px-3 py-1.5 rounded-full hover:border-primary hover:text-primary transition-all">Compare Regions</button>
+<button class="text-[9px] uppercase font-bold tracking-widest bg-background border border-outline text-on-surface/50 px-3 py-1.5 rounded-full hover:border-primary hover:text-primary transition-all">Summarize Compliance</button>
+</div>
+</div>
+</div>
+<!-- Bottom Performance Card -->
+<div class="glass-card rounded-xl p-5 border-t-2 border-t-primary">
+<div class="flex items-center justify-between mb-3">
+<span class="text-[10px] font-bold text-on-surface/50 uppercase tracking-widest">Global Fairness Score</span>
+<span class="text-primary font-mono font-bold text-sm">88.2%</span>
+</div>
+<div class="w-full h-1.5 bg-background rounded-full overflow-hidden border border-outline">
+<div class="h-full bg-primary" style="width: 88.2%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Engine Status Footer Bar -->
+<footer class="fixed bottom-0 left-[240px] right-0 h-10 bg-[#222831] border-t border-outline flex items-center px-8 justify-between z-40">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#00ADB5]"></div>
+<span class="text-[10px] font-mono font-bold tracking-widest text-on-surface/60">ENGINE: LIVE</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-on-surface/40" data-icon="speed">speed</span>
+<span class="text-[10px] font-mono font-bold tracking-widest text-on-surface/60">LATENCY: 24MS</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-on-surface/40" data-icon="verified_user">verified_user</span>
+<span class="text-[10px] font-mono font-bold tracking-widest text-on-surface/60">Uptime: 99.98%</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-mono text-on-surface/30">NODE: EU-WEST-1C</span>
+<span class="text-[10px] font-mono text-on-surface/30">V.4.2.0-STABLE</span>
+</div>
+</footer>
+</main>
+</body></html>

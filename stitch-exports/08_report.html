@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETHYX Report Page (V3)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=DM+Mono:wght@400;500&amp;family=Manrope:wght@300;400;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#3c494a",
+                    "inverse-surface": "#dde3ef",
+                    "secondary-container": "#474c54",
+                    "background": "#0e141c",
+                    "primary-fixed-dim": "#55d8e1",
+                    "on-surface": "#dde3ef",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "outline": "#869394",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#080f17",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#2b313a",
+                    "secondary-fixed": "#dee2ed",
+                    "tertiary": "#c6c6c7",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-tint": "#55d8e1",
+                    "surface-variant": "#2f353e",
+                    "surface-container-high": "#242a33",
+                    "on-secondary-fixed-variant": "#42474f",
+                    "on-tertiary": "#2f3131",
+                    "on-secondary": "#2c3138",
+                    "on-primary-fixed": "#002022",
+                    "surface-bright": "#343a43",
+                    "surface": "#0e141c",
+                    "primary": "#55d8e1",
+                    "on-primary": "#003739",
+                    "surface-dim": "#0e141c",
+                    "surface-container-low": "#161c25",
+                    "surface-container": "#1a2029",
+                    "secondary": "#c2c7d0",
+                    "on-primary-container": "#003a3d",
+                    "on-secondary-fixed": "#171c23",
+                    "inverse-primary": "#00696e",
+                    "on-surface-variant": "#bbc9ca",
+                    "on-secondary-container": "#b7bcc6",
+                    "on-primary-fixed-variant": "#004f53",
+                    "on-background": "#dde3ef",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "secondary-fixed-dim": "#c2c7d0",
+                    "tertiary-container": "#9b9c9c",
+                    "on-tertiary-container": "#323434",
+                    "primary-container": "#00adb5",
+                    "on-error": "#690005",
+                    "primary-fixed": "#75f5fd",
+                    "surface-container-highest": "#2f353e",
+                    "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"],
+                    "orbitron": ["Orbitron"],
+                    "mono": ["DM Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0e141c;
+            background-image: radial-gradient(#1a2029 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .glass-panel {
+            background: rgba(57, 62, 70, 0.3);
+            backdrop-filter: blur(14px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scale-98-on-click:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased overflow-x-hidden">
+<!-- SideNavBar Shell -->
+<nav class="fixed left-0 top-0 h-full flex flex-col bg-slate-900/80 backdrop-blur-xl h-screen w-64 border-r border-cyan-500/10 shadow-2xl shadow-cyan-900/20 z-50">
+<div class="px-6 py-10">
+<h1 class="font-orbitron font-black text-cyan-400 tracking-widest text-xl mb-1">ETHYX AI</h1>
+<p class="font-headline text-xs uppercase tracking-wider text-slate-400">System Integrity</p>
+</div>
+<div class="flex-grow flex flex-col gap-1 px-4">
+<a class="flex items-center gap-4 px-4 py-3 text-slate-400 hover:text-cyan-300 transition-colors font-headline text-sm uppercase tracking-wider rounded-lg hover:bg-cyan-400/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+                Upload
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-400 hover:text-cyan-300 transition-colors font-headline text-sm uppercase tracking-wider rounded-lg hover:bg-cyan-400/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-400 hover:text-cyan-300 transition-colors font-headline text-sm uppercase tracking-wider rounded-lg hover:bg-cyan-400/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+                Explain
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-400 hover:text-cyan-300 transition-colors font-headline text-sm uppercase tracking-wider rounded-lg hover:bg-cyan-400/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                Mitigate
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-cyan-400 font-bold border-r-2 border-cyan-400 bg-cyan-400/5 font-headline text-sm uppercase tracking-wider transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+                Report
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-400 hover:text-cyan-300 transition-colors font-headline text-sm uppercase tracking-wider rounded-lg hover:bg-cyan-400/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+                Profile
+            </a>
+</div>
+<div class="p-6">
+<button class="w-full bg-[#00ADB5] text-[#002022] font-bold py-3 rounded-lg flex items-center justify-center gap-2 scale-98-on-click transition-all shadow-lg shadow-cyan-400/20">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Audit
+            </button>
+</div>
+</nav>
+<!-- TopAppBar Shell -->
+<header class="ml-64 flex justify-between items-center px-8 py-4 bg-slate-900/40 backdrop-blur-md sticky top-0 z-40">
+<div class="flex items-center gap-8">
+<h2 class="font-orbitron text-xl text-cyan-400">ETHYX AI</h2>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-400 hover:text-cyan-300 transition-all font-headline text-sm" href="#">Audit Log</a>
+<a class="text-slate-400 hover:text-cyan-300 transition-all font-headline text-sm" href="#">API Docs</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<input class="bg-surface-container-low border-none rounded-full px-5 py-2 text-sm text-on-surface w-64 focus:ring-1 focus:ring-primary transition-all" placeholder="Search report metrics..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-2 text-slate-500" data-icon="search">search</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 hover:text-cyan-300 cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-cyan-300 cursor-pointer" data-icon="settings">settings</span>
+<img class="w-8 h-8 rounded-full border border-cyan-400/30 object-cover" data-alt="close-up portrait of a professional analyst in a high-tech environment with soft blue rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeqi3lMAmfMyRpP5yRa4RGKyhacsPcUfuTEIS0HGHP2EankiqYiPQDUIx1odGNbGdLiv_q_UBvfNCBw6n3LJ2yMd3d-ywOIt832ktcnUgBUCgoV7BBZn2pYwd5gNCuVkE1ZQnjRs45zZvFI3ecpUWCD4VTBoAjtL81i-lSAg7yBjEevm5mS39Ada63IO2WkSsuvh_3hLTpIjXcV6vktDt_wQsJJEBC1R4sXo7I5hqZ92zBZ-zNCUwYzm127N6IQHWOK5GffsnmkEtZ"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-12 min-h-screen">
+<div class="max-w-4xl mx-auto">
+<!-- Report Header Section (White Paper Style) -->
+<div class="mb-20">
+<div class="flex justify-between items-start mb-12">
+<div class="space-y-4">
+<span class="font-mono text-primary text-xs tracking-tighter uppercase">Audit Identity: #AX-2024-0812</span>
+<h1 class="font-orbitron text-5xl font-black text-on-surface leading-tight tracking-tight">System Integrity &amp; <br/>Bias Assessment</h1>
+<p class="text-slate-500 font-headline font-light text-xl max-w-xl">A comprehensive editorial audit of the Model-7 Neural Architecture's fairness metrics and ethical compliance standing.</p>
+</div>
+<div class="text-right space-y-1">
+<p class="font-mono text-[10px] text-slate-500">VERSION 3.2.0-REPOR</p>
+<p class="font-mono text-[10px] text-slate-500">AUGUST 14, 2024</p>
+<p class="font-mono text-[10px] text-primary">STATUS: COMPLIANT</p>
+</div>
+</div>
+<!-- Highlight Metrics -->
+<div class="grid grid-cols-4 gap-4 mb-20">
+<div class="bg-surface-container-low p-6 rounded-xl border border-primary/5">
+<p class="font-headline text-[10px] uppercase tracking-widest text-slate-500 mb-2">Bias Index</p>
+<p class="font-mono text-3xl text-primary">0.04<span class="text-xs ml-1 text-slate-500">μ</span></p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-primary/5">
+<p class="font-headline text-[10px] uppercase tracking-widest text-slate-500 mb-2">Parity Score</p>
+<p class="font-mono text-3xl text-primary">98.4<span class="text-xs ml-1 text-slate-500">%</span></p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-primary/5">
+<p class="font-headline text-[10px] uppercase tracking-widest text-slate-500 mb-2">Audit Latency</p>
+<p class="font-mono text-3xl text-primary">12<span class="text-xs ml-1 text-slate-500">ms</span></p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-primary/5">
+<p class="font-headline text-[10px] uppercase tracking-widest text-slate-500 mb-2">Risk Factor</p>
+<p class="font-mono text-3xl text-emerald-400">LOW</p>
+</div>
+</div>
+</div>
+<!-- Executive Summary Section -->
+<section class="mb-24 grid grid-cols-12 gap-12">
+<div class="col-span-4">
+<h3 class="font-headline text-xs font-bold uppercase tracking-widest text-slate-500 border-l-2 border-primary pl-4 py-1">Executive Summary</h3>
+</div>
+<div class="col-span-8">
+<div class="prose prose-invert max-w-none">
+<p class="text-on-surface leading-relaxed font-light text-lg mb-6">
+                            The following document outlines the results of the "Obsidian Lens" audit protocol applied to the core reasoning engine. Our primary objective was to identify latent demographic disparities within the decision-making framework.
+                        </p>
+<p class="text-slate-400 leading-relaxed font-light text-base italic">
+                            "In the pursuit of digital neutrality, the silence of data is often where the loudest biases reside. Our mission is to amplify that silence into actionable insights."
+                        </p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<section class="mb-24">
+<div class="grid grid-cols-12 gap-6 h-[500px]">
+<!-- Primary Visualization -->
+<div class="col-span-8 bg-surface-container-low/50 rounded-2xl p-8 relative overflow-hidden group">
+<div class="flex justify-between items-center mb-10">
+<h4 class="font-orbitron text-xs tracking-widest text-on-surface">Demographic Parity Distribution</h4>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="open_in_full">open_in_full</span>
+</div>
+<!-- Mockup Graph -->
+<div class="flex items-end gap-2 h-48 mb-8">
+<div class="bg-primary/20 w-full h-[80%] rounded-t-sm transition-all group-hover:bg-primary/40"></div>
+<div class="bg-primary/20 w-full h-[65%] rounded-t-sm transition-all group-hover:bg-primary/40"></div>
+<div class="bg-primary/20 w-full h-[95%] rounded-t-sm transition-all group-hover:bg-primary/40"></div>
+<div class="bg-primary w-full h-[90%] rounded-t-sm transition-all shadow-[0_0_15px_rgba(85,216,225,0.3)]"></div>
+<div class="bg-primary/20 w-full h-[70%] rounded-t-sm transition-all group-hover:bg-primary/40"></div>
+<div class="bg-primary/20 w-full h-[85%] rounded-t-sm transition-all group-hover:bg-primary/40"></div>
+<div class="bg-primary/20 w-full h-[55%] rounded-t-sm transition-all group-hover:bg-primary/40"></div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-headline mb-1">Max Variance</p>
+<p class="font-mono text-sm text-primary">0.021%</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-headline mb-1">Sample Size</p>
+<p class="font-mono text-sm text-primary">1.2M</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-headline mb-1">Audit Type</p>
+<p class="font-mono text-sm text-primary">Deep Scan</p>
+</div>
+</div>
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-primary/5 blur-3xl rounded-full"></div>
+</div>
+<!-- Secondary Insights -->
+<div class="col-span-4 flex flex-col gap-6">
+<div class="flex-grow glass-panel rounded-2xl p-6 border border-white/5">
+<h4 class="font-orbitron text-[10px] tracking-widest text-on-surface mb-6">Heatmap Index</h4>
+<div class="w-full h-32 rounded-lg relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="abstract digital artwork showing fluid dark teal and cyan waves with a grainy procedural texture and neon light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxZjtlpmMzC_-FevDTc74pDqC1KrBlLa9wAKKASlST2DwYGrW4rR_1sXCG0He-xn4yZTNZkxujU1cImZLpZuQcn9yFFI7NJ538zGik4YCVKJ0S5WCljV27hreAs5KK5v6g19AoXORhYGywmVHSp4riYmYF5DvvrqbP2gvgGGif_oMhRWlDkpOcvtak42Qz_PM_51AYkR_hzXOVoYv2dzcO6sjuPfAg9O-fX5Nrr5x04Byq4UO1vxT65h9ylEmU5PYTMJDIOnQZIYwa"/>
+</div>
+<p class="text-xs text-slate-400 mt-4 leading-relaxed">Spatial distribution of decision density across the neural nodes.</p>
+</div>
+<div class="h-24 bg-primary text-on-primary-fixed rounded-2xl p-6 flex items-center justify-between">
+<div>
+<p class="font-headline text-[10px] uppercase font-black tracking-widest">Compliance</p>
+<p class="font-mono text-xl">ISO-AI-900</p>
+</div>
+<span class="material-symbols-outlined text-3xl" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Audit Logs Section -->
+<section class="mb-24">
+<div class="flex items-center gap-4 mb-8">
+<h3 class="font-headline text-xs font-bold uppercase tracking-widest text-slate-500 whitespace-nowrap">Audit Log Details</h3>
+<div class="w-full h-[1px] bg-cyan-900/20"></div>
+</div>
+<div class="space-y-1">
+<div class="group flex justify-between items-center py-4 px-6 rounded-lg hover:bg-surface-container-low transition-all">
+<div class="flex gap-12 items-center">
+<span class="font-mono text-xs text-slate-500">09:12:45</span>
+<span class="text-sm font-headline tracking-wide">Vector Weight Analysis: Gender Parity</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-mono text-xs text-primary">PASS</span>
+<span class="material-symbols-outlined text-slate-700 group-hover:text-primary transition-colors text-lg" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<div class="group flex justify-between items-center py-4 px-6 rounded-lg hover:bg-surface-container-low transition-all">
+<div class="flex gap-12 items-center">
+<span class="font-mono text-xs text-slate-500">09:15:22</span>
+<span class="text-sm font-headline tracking-wide">Contextual Bias: Linguistic Nuance</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-mono text-xs text-primary">PASS</span>
+<span class="material-symbols-outlined text-slate-700 group-hover:text-primary transition-colors text-lg" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<div class="group flex justify-between items-center py-4 px-6 rounded-lg hover:bg-surface-container-low transition-all">
+<div class="flex gap-12 items-center">
+<span class="font-mono text-xs text-slate-500">09:20:01</span>
+<span class="text-sm font-headline tracking-wide">Token Relevancy Variance Check</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-mono text-xs text-emerald-400">OPTIMIZED</span>
+<span class="material-symbols-outlined text-slate-700 group-hover:text-primary transition-colors text-lg" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Report Footer / Recommendation -->
+<section class="bg-slate-900/40 border border-primary/10 rounded-3xl p-12 mb-24 relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-orbitron text-2xl mb-6">Final Auditor Recommendation</h3>
+<p class="text-slate-400 font-light leading-relaxed mb-8 max-w-2xl">
+                        Based on the deep scan of Obsidian-Protocol-X, the system exhibits exceptional integrity. We recommend moving to Phase 4 live-deployment with a bi-weekly monitoring interval for the edge-case clusters identified in Node 7.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary-fixed px-8 py-3 rounded-lg font-headline text-sm font-bold scale-98-on-click transition-all">Download PDF Report</button>
+<button class="border border-primary/40 text-primary px-8 py-3 rounded-lg font-headline text-sm font-bold hover:bg-primary/5 transition-all">Share Audit Link</button>
+</div>
+</div>
+<div class="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-primary/10 to-transparent"></div>
+</section>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="ml-64 flex justify-between items-center px-8 py-3 bg-slate-950 border-t border-cyan-900/30 font-mono text-xs uppercase text-slate-500">
+<div>
+            ETHYX AI © 2024 • System Integrity: 99.9% • Bias Scan Active
+        </div>
+<div class="flex gap-6">
+<a class="hover:text-cyan-400 transition-colors" href="#">Status</a>
+<a class="hover:text-cyan-400 transition-colors" href="#">Privacy</a>
+<a class="hover:text-cyan-400 transition-colors text-cyan-400" href="#">Security</a>
+</div>
+</footer>
+</body></html>

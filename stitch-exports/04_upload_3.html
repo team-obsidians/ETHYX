@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETHYX AI - Column Mapping</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=DM+Mono:wght@300;400;500&amp;family=Space+Grotesk:wght@300;400;700&amp;family=Manrope:wght@300;400;700&amp;family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#9b9c9c",
+                        "secondary": "#c2c7d0",
+                        "on-tertiary-container": "#323434",
+                        "secondary-fixed-dim": "#c2c7d0",
+                        "inverse-surface": "#dde3ef",
+                        "on-error": "#690005",
+                        "surface-container-high": "#242a33",
+                        "on-secondary": "#2c3138",
+                        "inverse-primary": "#00696e",
+                        "surface-tint": "#55d8e1",
+                        "background": "#0e141c",
+                        "surface-dim": "#0e141c",
+                        "on-primary-fixed-variant": "#004f53",
+                        "on-secondary-fixed-variant": "#42474f",
+                        "error-container": "#93000a",
+                        "on-primary": "#003739",
+                        "on-tertiary": "#2f3131",
+                        "tertiary": "#c6c6c7",
+                        "surface-bright": "#343a43",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#dee2ed",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "outline-variant": "#3c494a",
+                        "on-secondary-container": "#b7bcc6",
+                        "outline": "#869394",
+                        "surface-variant": "#2f353e",
+                        "primary-fixed": "#75f5fd",
+                        "surface-container-highest": "#2f353e",
+                        "on-background": "#dde3ef",
+                        "on-primary-container": "#003a3d",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container": "#1a2029",
+                        "inverse-on-surface": "#2b313a",
+                        "primary-container": "#00adb5",
+                        "on-surface": "#dde3ef",
+                        "surface": "#0e141c",
+                        "surface-container-lowest": "#080f17",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-surface-variant": "#bbc9ca",
+                        "surface-container-low": "#161c25",
+                        "primary-fixed-dim": "#55d8e1",
+                        "on-secondary-fixed": "#171c23",
+                        "on-primary-fixed": "#002022",
+                        "secondary-container": "#474c54",
+                        "primary": "#55d8e1",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Orbitron", "Space Grotesk"],
+                        "body": ["DM Sans", "Manrope"],
+                        "label": ["Inter"],
+                        "mono": ["DM Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e141c;
+            background-image: radial-gradient(circle at 2px 2px, rgba(85, 216, 225, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+        .dm-mono { font-family: 'DM Mono', monospace; }
+        .glass-card {
+            background: rgba(57, 62, 70, 0.72);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(85, 216, 225, 0.2);
+        }
+        .teal-glow {
+            box-shadow: 0 0 40px rgba(0, 173, 181, 0.1);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #55d8e1 0%, #00adb5 100%);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar Component -->
+<nav class="w-[240px] h-full fixed left-0 top-0 bg-[#0e141c] flex flex-col justify-between py-6 z-50">
+<div>
+<div class="px-6 mb-10">
+<h1 class="text-xl font-black tracking-widest text-[#55d8e1] uppercase orbitron">ETHYX AI</h1>
+<p class="text-[10px] text-primary/50 tracking-[0.3em] font-bold orbitron">Obsidian Lens</p>
+</div>
+<div class="space-y-1">
+<a class="flex items-center px-6 py-3 space-x-3 text-[#EEEEEE]/60 hover:text-[#EEEEEE] hover:bg-[#393e46]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<!-- Active Tab: Upload -->
+<a class="flex items-center px-6 py-3 space-x-3 text-[#55d8e1] border-r-2 border-[#55d8e1] font-bold hover:bg-[#393e46]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+<span class="text-sm">Upload</span>
+</a>
+<a class="flex items-center px-6 py-3 space-x-3 text-[#EEEEEE]/60 hover:text-[#EEEEEE] hover:bg-[#393e46]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<span class="text-sm font-medium">Explain</span>
+</a>
+<a class="flex items-center px-6 py-3 space-x-3 text-[#EEEEEE]/60 hover:text-[#EEEEEE] hover:bg-[#393e46]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="auto_fix_high">auto_fix_high</span>
+<span class="text-sm font-medium">Mitigate</span>
+</a>
+<a class="flex items-center px-6 py-3 space-x-3 text-[#EEEEEE]/60 hover:text-[#EEEEEE] hover:bg-[#393e46]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-sm font-medium">Report</span>
+</a>
+<a class="flex items-center px-6 py-3 space-x-3 text-[#EEEEEE]/60 hover:text-[#EEEEEE] hover:bg-[#393e46]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+</div>
+</div>
+<div class="space-y-1">
+<a class="flex items-center px-6 py-3 space-x-3 text-[#EEEEEE]/60 hover:text-[#EEEEEE] hover:bg-[#393e46]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center px-6 py-3 space-x-3 text-[#EEEEEE]/60 hover:text-[#EEEEEE] hover:bg-[#393e46]/30 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-sm font-medium">Log out</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar Component -->
+<header class="fixed top-0 right-0 w-[calc(100%-240px)] h-16 bg-[#0e141c]/80 backdrop-blur-md flex justify-between items-center px-8 z-40 transition-all">
+<div class="flex items-center space-x-6">
+<span class="text-[#55d8e1] font-medium dm-sans">Upload Wizard</span>
+<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+<span class="text-on-surface-variant text-xs dm-mono">FILE: medical_loan_data_v4.csv</span>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-[#EEEEEE]/70 hover:text-[#55d8e1] text-sm flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span>
+                Need help?
+            </button>
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-primary/20 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a data engineer in a high-tech studio environment with soft blue lighting and technical overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwuc2PAUxWsGnKfVWOtnm3d086_b8MllioFpooRgOnuniChb8ko5Zuy1MGiaBjuHVtmkoEn-KgdVG3A1-bnhFxprUCbAB98PB8KH6jp9YaXZMJIkiUJHqH_dYgH3mWe7N5QY8sDR6z0N_7oirZjAMixYiuE7VJLS7qMYobqH5rtXGq3zdb8oj6A5wHK1unMNmY9XQVnL8KIaLMWFTIqtpQg999foty3WhZfX7oujkpOhJgu4HBWJjl1t1wJXHw-AU-ljALi3UP3nhI"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] pt-24 px-12 pb-12 min-h-screen">
+<!-- Step Progress Bar -->
+<div class="max-w-5xl mx-auto mb-12">
+<div class="flex items-center justify-between relative">
+<div class="absolute h-0.5 bg-outline-variant/30 w-full top-1/2 -translate-y-1/2 z-0"></div>
+<div class="absolute h-0.5 bg-primary w-[66%] top-1/2 -translate-y-1/2 z-0 transition-all duration-500"></div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-[0_0_15px_rgba(85,216,225,0.4)]">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="check" data-weight="fill">check</span>
+</div>
+<span class="mt-2 text-[10px] orbitron tracking-tighter text-primary font-bold">SOURCE</span>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-[0_0_15px_rgba(85,216,225,0.4)]">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="check" data-weight="fill">check</span>
+</div>
+<span class="mt-2 text-[10px] orbitron tracking-tighter text-primary font-bold">SCHEMA</span>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary border-2 border-primary-container flex items-center justify-center shadow-[0_0_20px_rgba(85,216,225,0.2)]">
+<span class="text-on-primary-fixed dm-mono font-bold">03</span>
+</div>
+<span class="mt-2 text-[10px] orbitron tracking-tighter text-primary font-bold">MAPPING</span>
+</div>
+<div class="relative z-10 flex flex-col items-center opacity-40">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-outline-variant flex items-center justify-center">
+<span class="text-on-surface-variant dm-mono">04</span>
+</div>
+<span class="mt-2 text-[10px] orbitron tracking-tighter text-on-surface-variant">ANALYZE</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto">
+<!-- Left: Validation Summary (Asymmetrical Layout) -->
+<div class="lg:col-span-4 space-y-6">
+<div class="glass-card p-8 rounded-xl teal-glow relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="flex items-start justify-between mb-6">
+<div>
+<h2 class="orbitron text-xl font-black text-primary tracking-wide mb-1">VALIDATION</h2>
+<p class="text-on-surface-variant text-sm">Integrity Check Complete</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-400" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-medium">Headers parsed (12 columns)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-400" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-medium">No missing values detected</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-400" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-medium">Data types localized</span>
+</div>
+</div>
+<div class="p-4 bg-primary/5 rounded-lg border border-primary/20 flex items-center justify-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="task_alt">task_alt</span>
+<span class="orbitron text-xs font-bold tracking-widest text-primary">READY TO ANALYZE</span>
+</div>
+<button class="w-full py-4 primary-gradient rounded-lg text-on-primary-fixed font-bold orbitron tracking-widest text-sm hover:opacity-90 transition-all transform active:scale-95 shadow-[0_0_20px_rgba(85,216,225,0.4)]">
+                        START AUDIT
+                    </button>
+</div>
+<!-- Feature Legend -->
+<div class="glass-card p-6 rounded-xl border-outline-variant/20">
+<h3 class="text-xs orbitron font-bold text-on-surface-variant mb-4 tracking-widest uppercase">MAP LEGEND</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-sm bg-orange-500/80 shadow-[0_0_8px_rgba(249,115,22,0.4)]"></div>
+<span class="text-xs dm-sans">Sensitive Feature (Bias Probe)</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-sm bg-[#55d8e1]/80 shadow-[0_0_8px_rgba(85,216,225,0.4)]"></div>
+<span class="text-xs dm-sans">Prediction Target</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-sm bg-outline-variant"></div>
+<span class="text-xs dm-sans">Descriptive Attribute</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: CSV Preview Table -->
+<div class="lg:col-span-8">
+<div class="glass-card rounded-xl overflow-hidden teal-glow">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+<div>
+<h3 class="orbitron text-lg font-bold tracking-tight">COLUMN MAPPING</h3>
+<p class="text-xs text-on-surface-variant">Review and assign AI audit roles to your data columns.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded hover:bg-surface-container-highest text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="tune">tune</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 border-r border-outline-variant/10">
+<div class="flex flex-col">
+<span class="text-[10px] orbitron text-on-surface-variant mb-1">ROLE</span>
+<div class="flex items-center gap-2 text-xs font-bold text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded">
+                                                ID <span class="material-symbols-outlined text-[14px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</th>
+<th class="px-6 py-4 border-r border-outline-variant/10 border-b-2 border-orange-500/40 bg-orange-500/5">
+<div class="flex flex-col">
+<span class="text-[10px] orbitron text-orange-400 mb-1">SENSITIVE</span>
+<div class="flex items-center gap-2 text-xs font-bold text-orange-400 bg-orange-500/10 px-2 py-1 rounded border border-orange-500/20">
+                                                ETHNICITY <span class="material-symbols-outlined text-[14px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</th>
+<th class="px-6 py-4 border-r border-outline-variant/10">
+<div class="flex flex-col">
+<span class="text-[10px] orbitron text-on-surface-variant mb-1">ATTRIBUTE</span>
+<div class="flex items-center gap-2 text-xs font-bold text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded">
+                                                CREDIT_SCORE <span class="material-symbols-outlined text-[14px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</th>
+<th class="px-6 py-4 border-r border-outline-variant/10 border-b-2 border-primary/40 bg-primary/5">
+<div class="flex flex-col">
+<span class="text-[10px] orbitron text-primary mb-1">PREDICTION</span>
+<div class="flex items-center gap-2 text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                                                LOAN_STATUS <span class="material-symbols-outlined text-[14px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="dm-mono text-sm">
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-highest/30 transition-colors">
+<td class="px-6 py-4 text-on-surface-variant">#9021</td>
+<td class="px-6 py-4 text-orange-200">Group_A</td>
+<td class="px-6 py-4">742</td>
+<td class="px-6 py-4 text-primary">APPROVED</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-highest/30 transition-colors">
+<td class="px-6 py-4 text-on-surface-variant">#9022</td>
+<td class="px-6 py-4 text-orange-200">Group_C</td>
+<td class="px-6 py-4">610</td>
+<td class="px-6 py-4 text-error">DENIED</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-highest/30 transition-colors">
+<td class="px-6 py-4 text-on-surface-variant">#9023</td>
+<td class="px-6 py-4 text-orange-200">Group_A</td>
+<td class="px-6 py-4">812</td>
+<td class="px-6 py-4 text-primary">APPROVED</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-highest/30 transition-colors">
+<td class="px-6 py-4 text-on-surface-variant">#9024</td>
+<td class="px-6 py-4 text-orange-200">Group_B</td>
+<td class="px-6 py-4">655</td>
+<td class="px-6 py-4 text-error">DENIED</td>
+</tr>
+<tr class="hover:bg-surface-container-highest/30 transition-colors">
+<td class="px-6 py-4 text-on-surface-variant">#9025</td>
+<td class="px-6 py-4 text-orange-200">Group_A</td>
+<td class="px-6 py-4">788</td>
+<td class="px-6 py-4 text-primary">APPROVED</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container-lowest/40 flex justify-center border-t border-outline-variant/10">
+<button class="text-xs orbitron font-bold text-primary/70 hover:text-primary transition-all tracking-[0.2em]">VIEW ALL 1,240 ROWS</button>
+</div>
+</div>
+<!-- Technical Specs Card (Editorial Tension) -->
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="glass-card p-6 rounded-xl border-l-4 border-primary">
+<h4 class="text-[10px] orbitron text-on-surface-variant mb-2">MODEL ARCHITECTURE</h4>
+<p class="text-xl font-bold orbitron">Random Forest v.2</p>
+<div class="mt-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+<span class="text-xs dm-mono">Latent factor check: OPTIMAL</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl border-l-4 border-orange-500">
+<h4 class="text-[10px] orbitron text-on-surface-variant mb-2">SENSITIVE FEATURES</h4>
+<p class="text-xl font-bold orbitron text-orange-500">1 Detected</p>
+<div class="mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-500 text-sm" data-icon="warning">warning</span>
+<span class="text-xs dm-mono">Targeting: Parity Test</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating UI Accent Decorations -->
+<div class="fixed bottom-0 right-0 p-12 pointer-events-none -z-10 overflow-hidden w-full h-full">
+<div class="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#00adb5] opacity-[0.03] blur-[150px] rounded-full"></div>
+<div class="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-[#55d8e1] opacity-[0.02] blur-[120px] rounded-full"></div>
+</div>
+</main>
+</body></html>

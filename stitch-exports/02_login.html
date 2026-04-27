@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETHYX AI | Initialize Session</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=DM+Sans:wght@400;500;700&amp;family=DM+Mono:wght@400;500&amp;family=Orbitron:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "error": "#ffb4ab",
+                    "primary-fixed-dim": "#55d8e1",
+                    "surface": "#0e141c",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#242a33",
+                    "on-secondary-fixed": "#171c23",
+                    "on-tertiary-container": "#323434",
+                    "on-surface": "#dde3ef",
+                    "on-primary-fixed": "#002022",
+                    "on-primary-container": "#003a3d",
+                    "primary-container": "#00adb5",
+                    "inverse-primary": "#00696e",
+                    "surface-tint": "#55d8e1",
+                    "secondary-fixed-dim": "#c2c7d0",
+                    "surface-dim": "#0e141c",
+                    "secondary-fixed": "#dee2ed",
+                    "inverse-surface": "#dde3ef",
+                    "on-primary": "#003739",
+                    "secondary-container": "#474c54",
+                    "surface-container-highest": "#2f353e",
+                    "outline": "#869394",
+                    "secondary": "#c2c7d0",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-secondary": "#2c3138",
+                    "on-tertiary": "#2f3131",
+                    "on-error": "#690005",
+                    "surface-container": "#1a2029",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-secondary-fixed-variant": "#42474f",
+                    "surface-bright": "#343a43",
+                    "on-surface-variant": "#bbc9ca",
+                    "surface-container-lowest": "#080f17",
+                    "on-background": "#dde3ef",
+                    "surface-variant": "#2f353e",
+                    "outline-variant": "#3c494a",
+                    "tertiary-container": "#9b9c9c",
+                    "background": "#0e141c",
+                    "inverse-on-surface": "#2b313a",
+                    "tertiary": "#c6c6c7",
+                    "primary": "#55d8e1",
+                    "on-primary-fixed-variant": "#004f53",
+                    "surface-container-low": "#161c25",
+                    "tertiary-fixed": "#e2e2e2",
+                    "error-container": "#93000a",
+                    "on-secondary-container": "#b7bcc6",
+                    "primary-fixed": "#75f5fd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Orbitron", "sans-serif"],
+                    "body": ["DM Sans", "sans-serif"],
+                    "mono": ["DM Mono", "monospace"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .dot-grid {
+            background-image: radial-gradient(#55d8e1 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        .glass-panel {
+            background: rgba(57, 62, 70, 0.72);
+            backdrop-filter: blur(14px);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 173, 181, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Background Texture -->
+<div class="fixed inset-0 dot-grid pointer-events-none"></div>
+<div class="fixed top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e141c]/80 backdrop-blur-[14px] border-b border-[#55d8e1]/20 shadow-2xl shadow-[#00adb5]/5 flex justify-between items-center px-8 py-4">
+<div class="text-2xl font-black tracking-[0.05em] text-[#55d8e1] uppercase font-['Space_Grotesk']">
+            ETHYX AI
+        </div>
+<div class="hidden md:flex items-center space-x-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#EEEEEE]/60 hover:text-[#EEEEEE] transition-colors" href="#">Platform</a>
+<a class="text-[#EEEEEE]/60 hover:text-[#EEEEEE] transition-colors" href="#">Principles</a>
+<a class="text-[#EEEEEE]/60 hover:text-[#EEEEEE] transition-colors" href="#">Documentation</a>
+</div>
+<button class="bg-primary text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:bg-[#55d8e1]/10 border border-primary/20 transition-all duration-300 active:scale-95">
+            Request Access
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-6 py-24 z-10">
+<div class="w-full max-w-6xl flex flex-col md:flex-row glass-panel rounded-[14px] border border-primary/20 overflow-hidden shadow-2xl">
+<!-- Left Panel: Visual Marketing -->
+<div class="md:w-5/12 relative hidden md:block border-r border-primary/10">
+<img alt="abstract visualization of neural networks" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="abstract digital visualization of neural networks with cyan glowing connections on a dark background in architectural style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqFgOoBHKcixGVeZ3wW2vTkwRgCkZ2kOLIZ19FDACQbiUrbiPnPEA-hjZ89Q-gOjHgEKiAR1zHi8I4S5cKIpuKnI-aw-oQQxPMGR2Krrrqizsa_7edj_4h-Wl_98Ypv0Vcak4wr0isLrVwGqU4WeqtrMqU20-HV61PUTUPWTtPhU971ABC6NTGPtwoOsGUiQVdH5DMb4My5ZgAGMw8MITCdPBvY_spUjtN-uGxUSsFSLBZoxmiWyD6hpKJeWfqKguLCnG8jk4ocJWl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40"></div>
+<div class="relative h-full flex flex-col justify-end p-12 space-y-6">
+<div class="space-y-2">
+<span class="text-primary font-mono text-xs tracking-widest uppercase">Obsidian Lens v2.0</span>
+<h2 class="font-headline text-4xl font-black leading-tight tracking-tight text-white">
+                            AUDITING THE <br/><span class="text-primary">INVISIBLE.</span>
+</h2>
+</div>
+<p class="text-on-surface/70 leading-relaxed max-w-xs">
+                        Secure your neural assets with Ethyx AI’s high-precision auditing suite. Detection, neutralization, and reporting in real-time.
+                    </p>
+<div class="grid grid-cols-2 gap-4 pt-6 border-t border-primary/10">
+<div class="space-y-1">
+<div class="text-primary font-mono text-lg font-bold">99.9%</div>
+<div class="text-[10px] uppercase tracking-wider text-on-surface/40 font-bold">Integrity Shield</div>
+</div>
+<div class="space-y-1">
+<div class="text-primary font-mono text-lg font-bold">12ms</div>
+<div class="text-[10px] uppercase tracking-wider text-on-surface/40 font-bold">Latency Floor</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Login Form -->
+<div class="md:w-7/12 p-8 md:p-16 flex flex-col justify-center bg-surface-container-low">
+<div class="max-w-md mx-auto w-full space-y-8">
+<div class="space-y-2 text-center md:text-left">
+<h1 class="font-headline text-2xl font-bold tracking-tight text-white">Initialize Session</h1>
+<p class="text-on-surface/60 font-body">Authorized personnel access only.</p>
+</div>
+<div class="space-y-6">
+<!-- Google Auth -->
+<button class="w-full flex items-center justify-center space-x-3 bg-surface-container-highest border border-outline-variant/30 px-4 py-3 rounded-lg hover:border-primary/50 transition-all active:scale-[0.98] group">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.26c.49-.43.49-1.35.81-2.58z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="text-on-surface font-medium">Continue with Google</span>
+</button>
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-outline-variant/20"></div>
+<span class="flex-shrink mx-4 text-xs font-mono text-on-surface/30 uppercase tracking-[0.2em]">Institutional Link</span>
+<div class="flex-grow border-t border-outline-variant/20"></div>
+</div>
+<!-- Form Fields -->
+<div class="space-y-5">
+<div class="space-y-1.5">
+<label class="text-[10px] uppercase tracking-widest text-primary/60 font-bold ml-1">Institutional Email</label>
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/5 blur-md rounded-lg opacity-100 group-focus-within:opacity-100"></div>
+<input class="w-full bg-surface-container-highest/80 border border-primary/40 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_0_15px_rgba(85,216,225,0.1)] relative z-10 transition-all placeholder:text-on-surface/20" placeholder="name@organization.ai" type="email" value="admin@ethyx.internal"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="text-[10px] uppercase tracking-widest text-on-surface/40 font-bold ml-1">Access Key</label>
+<a class="text-[10px] text-primary hover:underline transition-all uppercase tracking-widest" href="#">Lost Key?</a>
+</div>
+<input class="w-full bg-surface-container-highest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-all placeholder:text-on-surface/20" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Submit -->
+<button class="w-full bg-primary-container text-on-primary-fixed py-4 rounded-lg font-headline font-bold text-sm tracking-[0.1em] btn-glow transition-all active:scale-[0.98] shadow-lg shadow-primary-container/20 uppercase">
+                            Initialize Session
+                        </button>
+<p class="text-center text-xs text-on-surface/40">
+                            New facility? <a class="text-primary hover:underline font-bold" href="#">Request Provisioning</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#55d8e1]/10 bg-[#0e141c] flex flex-col md:flex-row justify-between items-center px-12 py-8 z-10">
+<div class="text-[#55d8e1] font-bold font-['DM_Sans'] text-sm tracking-wide mb-4 md:mb-0">
+            © 2024 ETHYX AI. SECURING THE OBSIDIAN LENS.
+        </div>
+<div class="flex space-x-8">
+<a class="text-[#EEEEEE]/40 hover:text-[#55d8e1] text-sm font-['DM_Sans'] tracking-wide hover:underline decoration-[#00adb5] transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-[#EEEEEE]/40 hover:text-[#55d8e1] text-sm font-['DM_Sans'] tracking-wide hover:underline decoration-[#00adb5] transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-[#EEEEEE]/40 hover:text-[#55d8e1] text-sm font-['DM_Sans'] tracking-wide hover:underline decoration-[#00adb5] transition-all opacity-80 hover:opacity-100" href="#">AI Audit Standards</a>
+</div>
+</footer>
+</body></html>

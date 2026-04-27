@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ETHYX AI - Profile Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#3c494a",
+                        "inverse-surface": "#dde3ef",
+                        "secondary-container": "#474c54",
+                        "background": "#0e141c",
+                        "primary-fixed-dim": "#55d8e1",
+                        "on-surface": "#dde3ef",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "outline": "#869394",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#080f17",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#2b313a",
+                        "secondary-fixed": "#dee2ed",
+                        "tertiary": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-tint": "#55d8e1",
+                        "surface-variant": "#2f353e",
+                        "surface-container-high": "#242a33",
+                        "on-secondary-fixed-variant": "#42474f",
+                        "on-tertiary": "#2f3131",
+                        "on-secondary": "#2c3138",
+                        "on-primary-fixed": "#002022",
+                        "surface-bright": "#343a43",
+                        "surface": "#0e141c",
+                        "primary": "#55d8e1",
+                        "on-primary": "#003739",
+                        "surface-dim": "#0e141c",
+                        "surface-container-low": "#161c25",
+                        "surface-container": "#1a2029",
+                        "secondary": "#c2c7d0",
+                        "on-primary-container": "#003a3d",
+                        "on-secondary-fixed": "#171c23",
+                        "inverse-primary": "#00696e",
+                        "on-surface-variant": "#bbc9ca",
+                        "on-secondary-container": "#b7bcc6",
+                        "on-primary-fixed-variant": "#004f53",
+                        "on-background": "#dde3ef",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-fixed-dim": "#c2c7d0",
+                        "tertiary-container": "#9b9c9c",
+                        "on-tertiary-container": "#323434",
+                        "primary-container": "#00adb5",
+                        "on-error": "#690005",
+                        "primary-fixed": "#75f5fd",
+                        "surface-container-highest": "#2f353e",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"],
+                        "orbitron": ["Orbitron"],
+                        "dm-mono": ["DM Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scale-98-on-click:active { transform: scale(0.98); }
+        .glow-on-hover:hover { text-shadow: 0 0 8px rgba(85, 216, 225, 0.6); }
+        .tonal-shift-only { border: none !important; }
+        .dot-grid {
+            background-image: radial-gradient(circle, rgba(85, 216, 225, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 min-h-screen dot-grid overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col h-screen w-64 border-r border-cyan-500/10 bg-slate-900/80 backdrop-blur-xl shadow-2xl shadow-cyan-900/20 z-50">
+<div class="p-8">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h1 class="font-orbitron font-black text-cyan-400 tracking-widest text-xl">ETHYX AI</h1>
+<p class="font-space-grotesk text-[10px] uppercase tracking-widest text-slate-500">System Integrity</p>
+</div>
+</div>
+<nav class="space-y-2">
+<!-- Nav Items mapping -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-cyan-300 transition-colors font-space-grotesk text-sm uppercase tracking-wider scale-98-on-click" href="#">
+<span class="material-symbols-outlined">cloud_upload</span> Upload
+                </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-cyan-300 transition-colors font-space-grotesk text-sm uppercase tracking-wider scale-98-on-click" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-cyan-300 transition-colors font-space-grotesk text-sm uppercase tracking-wider scale-98-on-click" href="#">
+<span class="material-symbols-outlined">insights</span> Explain
+                </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-cyan-300 transition-colors font-space-grotesk text-sm uppercase tracking-wider scale-98-on-click" href="#">
+<span class="material-symbols-outlined">security</span> Mitigate
+                </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 hover:text-cyan-300 transition-colors font-space-grotesk text-sm uppercase tracking-wider scale-98-on-click" href="#">
+<span class="material-symbols-outlined">assessment</span> Report
+                </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-cyan-400 font-bold border-r-2 border-cyan-400 bg-cyan-400/5 font-space-grotesk text-sm uppercase tracking-wider scale-98-on-click" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span> Profile
+                </a>
+</nav>
+</div>
+<div class="mt-auto p-6">
+<button class="w-full bg-primary-container text-on-primary-fixed font-bold py-3 rounded-lg flex items-center justify-center gap-2 glow-on-hover transition-all scale-98-on-click">
+<span class="material-symbols-outlined">add</span> New Audit
+            </button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="ml-64 flex justify-between items-center px-8 py-4 bg-slate-900/40 backdrop-blur-md sticky top-0 z-40">
+<div class="flex items-center gap-8">
+<h2 class="font-orbitron text-xl text-cyan-400 glow-on-hover">Profile</h2>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-400 hover:text-cyan-300 font-space-grotesk text-sm transition-all" href="#">Audit Log</a>
+<a class="text-slate-400 hover:text-cyan-300 font-space-grotesk text-sm transition-all" href="#">API Docs</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-sm text-on-surface focus:ring-1 focus:ring-primary w-64 placeholder:text-slate-600 transition-all" placeholder="Search system logs..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-cyan-400 transition-all"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-slate-400 hover:text-cyan-400 transition-all"><span class="material-symbols-outlined">settings</span></button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/30">
+<img alt="User profile" data-alt="professional portrait of a high-tech auditor in a dark studio with subtle teal rim lighting and futuristic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTJs3wlGQExupP0rm-UDLloTXhvtJgq0imD9xOb5BlmuPeefA6X1vbXRNLgKl2Qi40yewtFpgOcn5iLpm39snFkiboAd-U6f8tVrSEFNHbT_EmQwT5tSnxwKtxGnSfaqeqqHaXfwL6vzR5OlUgZHfe-62J9B35UEr68D2sE25rOhBwju-iFU-HbrTDP0njAox_1trocFvBl-HEkbITYTR3DYs32yDUHaFvEtJE_OSxZ72suC5OiYaHw05JHHSHVxJJFF7NJ5VQI89r"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-8 min-h-[calc(100vh-120px)]">
+<!-- Profile Hero Section -->
+<section class="mb-12 relative overflow-hidden rounded-2xl bg-surface-container-low/50 backdrop-blur-xl p-10 border border-primary/10">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
+<div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+<div class="relative">
+<div class="w-32 h-32 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-[0_0_30px_rgba(85,216,225,0.1)]">
+<img alt="Marcus Chen" data-alt="close-up portrait of an experienced software architect with a focused expression, dark cinematic lighting with cyan highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqf5QXj-Z5C234qoVlXHHIwiSqGUuM4iksuJp-DU1RDHyt3P0Rsw7rLYqf88GdnxNX6R_9LkjWoedDoJxSgfghYgidHG_O-eHi-PVPZssqKOxmoDK3EMC-bWjT13CC7ozY-NS0RJwXHI4gROZ-UIrXRDtrzO4U_ZW7mUS_YEYYrTOnSbUjcW4X9ODJSugkSpZNhs5EJUbW4yDED9B1LlKp-z3MW8n0GA-Qs7XYoXmjQqqpBGr4RqBRl-NStNX3cyFmIfvXKan5Mzxc"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-on-primary-fixed text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-tighter">Verified</div>
+</div>
+<div class="text-center md:text-left">
+<h3 class="font-orbitron text-3xl font-black text-on-surface mb-2">Marcus Chen</h3>
+<p class="font-dm-mono text-primary text-sm mb-4 tracking-wide">Principal Audit Engineer • System Admin</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4">
+<div class="flex items-center gap-2 bg-surface-container-highest px-3 py-1.5 rounded-lg border border-outline-variant/30 text-xs">
+<span class="material-symbols-outlined text-xs text-primary">verified_user</span>
+<span class="font-dm-mono text-slate-300">Level 4 Access</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-highest px-3 py-1.5 rounded-lg border border-outline-variant/30 text-xs">
+<span class="material-symbols-outlined text-xs text-primary">location_on</span>
+<span class="font-dm-mono text-slate-300">HQ-Singapore</span>
+</div>
+</div>
+</div>
+<div class="md:ml-auto flex gap-3">
+<button class="bg-surface-container-highest border border-primary/20 px-6 py-2.5 rounded-lg text-primary text-sm font-bold hover:bg-primary/5 transition-all scale-98-on-click">Edit Profile</button>
+</div>
+</div>
+</section>
+<!-- Tabbed Interface Container -->
+<div class="bg-surface-container-low/30 rounded-2xl border border-outline-variant/20 overflow-hidden shadow-xl">
+<!-- Tabs Navigation -->
+<div class="flex border-b border-outline-variant/20 bg-surface-container-low px-6">
+<button class="px-8 py-5 text-primary border-b-2 border-primary font-space-grotesk text-sm font-bold transition-all">Account</button>
+<button class="px-8 py-5 text-slate-500 hover:text-slate-300 font-space-grotesk text-sm transition-all">History</button>
+<button class="px-8 py-5 text-slate-500 hover:text-slate-300 font-space-grotesk text-sm transition-all">Billing</button>
+<button class="px-8 py-5 text-slate-500 hover:text-slate-300 font-space-grotesk text-sm transition-all">Integrations</button>
+</div>
+<!-- Tab Content: Account (Active View) -->
+<div class="p-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Settings -->
+<div class="lg:col-span-2 space-y-8">
+<div>
+<h4 class="font-orbitron text-sm text-primary mb-6 uppercase tracking-widest flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Security Protocols
+                            </h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="text-[10px] uppercase font-bold text-slate-500 ml-1">Work Email</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary transition-all" type="email" value="m.chen@ethyx-ai.corp"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase font-bold text-slate-500 ml-1">Authentication</label>
+<div class="flex items-center justify-between w-full bg-surface-container-highest rounded-lg px-4 py-3 text-sm border border-primary/5">
+<span class="text-slate-300">2FA Active (TOTP)</span>
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase font-bold text-slate-500 ml-1">Session Timeout</label>
+<select class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary transition-all appearance-none">
+<option>15 Minutes</option>
+<option selected="">30 Minutes</option>
+<option>1 Hour</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase font-bold text-slate-500 ml-1">API Access Tier</label>
+<div class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3 text-sm text-slate-400">Enterprise High-Throughput</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/10">
+<h4 class="font-orbitron text-sm text-primary mb-6 uppercase tracking-widest flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Notification Architecture
+                            </h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-highest/40 rounded-xl hover:bg-surface-container-highest/60 transition-all group">
+<div>
+<p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Critical Bias Alerts</p>
+<p class="text-xs text-slate-500">Immediate push for fairness violations &gt; 15%</p>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-on-primary-fixed rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-highest/40 rounded-xl hover:bg-surface-container-highest/60 transition-all group">
+<div>
+<p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Daily Integrity Report</p>
+<p class="text-xs text-slate-500">Consolidated summary of system health</p>
+</div>
+<div class="w-12 h-6 bg-surface-variant rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-1 w-4 h-4 bg-slate-500 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Stats Bento -->
+<div class="space-y-6">
+<div class="bg-surface-container-highest rounded-2xl p-6 border border-primary/5">
+<h5 class="text-[10px] uppercase font-bold text-slate-500 mb-6 tracking-widest">Audit Activity</h5>
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-dm-mono text-2xl font-bold text-on-surface">1,284</p>
+<p class="text-[10px] text-slate-500 uppercase">Models Audited</p>
+</div>
+<div class="h-10 w-24 flex items-end gap-1">
+<div class="w-2 bg-primary/20 h-[30%]"></div>
+<div class="w-2 bg-primary/40 h-[60%]"></div>
+<div class="w-2 bg-primary/20 h-[45%]"></div>
+<div class="w-2 bg-primary/60 h-[80%]"></div>
+<div class="w-2 bg-primary/30 h-[50%]"></div>
+<div class="w-2 bg-primary h-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] uppercase font-bold text-slate-500">
+<span>System Trust Score</span>
+<span class="text-primary">99.8%</span>
+</div>
+<div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[99.8%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary-container/10 rounded-2xl p-6 border border-primary/20 relative overflow-hidden">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 blur-3xl"></div>
+<h5 class="text-[10px] uppercase font-bold text-primary mb-2 tracking-widest">Plan Details</h5>
+<p class="font-orbitron text-lg font-bold text-on-surface mb-1">Quantum Tier</p>
+<p class="text-xs text-slate-400 mb-6">Unlimited automated mitigations</p>
+<button class="w-full bg-primary text-on-primary-fixed py-2 rounded-lg text-xs font-bold transition-all glow-on-hover scale-98-on-click">Upgrade Instance</button>
+</div>
+<div class="bg-surface-container-highest/40 rounded-2xl p-6 border border-outline-variant/10">
+<h5 class="text-[10px] uppercase font-bold text-slate-500 mb-4 tracking-widest">Active Devices</h5>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">laptop_mac</span>
+<div>
+<p class="text-xs font-bold text-on-surface">MacBook Pro 16"</p>
+<p class="text-[10px] text-slate-500">Last active: 2 mins ago</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">smartphone</span>
+<div>
+<p class="text-xs font-bold text-on-surface">iPhone 15 Pro</p>
+<p class="text-[10px] text-slate-500">San Francisco, US</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="ml-64 flex justify-between items-center px-8 py-3 bg-slate-950 border-t border-cyan-900/30">
+<div class="flex items-center gap-6">
+<p class="font-dm-mono text-xs uppercase text-slate-500">ETHYX AI © 2024 • System Integrity: 99.9% • Bias Scan Active</p>
+</div>
+<div class="flex gap-6">
+<a class="font-dm-mono text-xs uppercase text-slate-500 hover:text-cyan-200 transition-colors" href="#">Status</a>
+<a class="font-dm-mono text-xs uppercase text-slate-500 hover:text-cyan-200 transition-colors" href="#">Privacy</a>
+<a class="font-dm-mono text-xs uppercase text-slate-500 hover:text-cyan-200 transition-colors" href="#">Security</a>
+</div>
+</footer>
+</body></html>
