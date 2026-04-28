@@ -403,29 +403,6 @@ backend/.venv/
 __pycache__/
 *.zip
 ```
-
-Final scan:
-
-```powershell
-rg -n "NEXT_PUBLIC_AZURE|NEXT_PUBLIC_GEMINI" frontend backend supabase
-rg -n "joblib\.load|window\.print|json\.loads\(response\.text\)" frontend backend
-Get-ChildItem -Recurse -Force -Directory -Include node_modules,.next,__pycache__,venv,.venv
-Get-ChildItem -Recurse -Force -File -Include .env.local,.env,tsconfig.tsbuildinfo
-```
-
-Initialize and push if needed:
-
-```powershell
-git init
-git add .
-git commit -m "Prepare ETHYX AI MVP for deployment"
-git branch -M main
-git remote add origin https://github.com/YOUR_ORG_OR_USER/ETHYX.git
-git push -u origin main
-```
-
----
-
 ## License
 
 No license has been specified yet. Add a license before public or commercial distribution.
